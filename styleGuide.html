@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aiden Nguyen Style Guide</title>
+
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/font.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+
+</head>
+
+<body class="style-guide">
+
+    <h1>Aiden Nguyen Portfolio Project</h1>
+    <h2>Style Guide</h2>
+
+    <h3>Personal portfolio site for a visual designer, showcasing recent projects and contact details</h3>
+
+
+    <nav>
+
+        <p class="fontMedium">
+            Go to:
+            <a href="#text_elements">Text Elements</a>,
+            <a href="#interactive_elements">Interactive Elements</a>,
+            <a href="#combined_elements">Combined Elements</a>,
+            <a href="#brand_components">Brand Components</a>,
+            <a href="#templates">Templates</a>
+        </p>
+        <p class="fontMedium">
+            <br>Pages:
+            <a href="index.html">Home</a>,
+            <a href="about.html">About Me</a>
+            <a href="sol.html">SOL-project1</a>
+            <a href="meal4me.html">Meal4Me-project2</a>
+            <a href="citations.html">Meal4Me-project2</a>
+
+        </p>
+
+    </nav>
+
+
+
+    <!-- text elements -->
+    <section id="text_elements">
+        <h2 class="element-text">Text Elements</h2>
+
+        <section>
+            <h2>Headings</h2>
+            <h3>CSS selector:</h3>
+            <p>h1, h2, h3, h4</p>
+            <h3>Sample code:</h3>
+            <code>
+        &lt;h1&gt; Heading 1 &lt;/h1&gt;<br>
+        &lt;h2&gt; Heading 2 &lt;/h2&gt;<br>
+        &lt;h3&gt; Heading 3 &lt;/h3&gt;<br>
+        &lt;h4&gt; Heading 4 &lt;/h4&gt;<br>
+        </code>
+
+            <h3>Rendered element:</h3>
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+        </section>
+
+        <section>
+            <h2>Hero Title</h2>
+            <h3>CSS selector:</h3>
+            <p>.hero-title</p>
+            <h3>Sample code:</h3>
+            <code>&lt;h1 class="hero-title"&gt;Connecting&lt;br&gt;with Content&lt;/h1&gt;</code>
+
+            <h3>Rendered element:</h3>
+            <h1 class="hero-title">Connecting<br>with Content</h1>
+        </section>
+
+        <section>
+            <h2>Paragraphs</h2>
+            <h3>CSS selector:</h3>
+            <p>p</p>
+            <h3>Sample code:</h3>
+            <code>
+            &lt;p&gt;Hi, I'm Aiden Nguyen, a visual designer crafting thoughtful
+            experiences and telling stories through design.&lt;/p&gt;
+            </code>
+
+            <h3>Rendered element:</h3>
+            <p>Hi, I'm Aiden Nguyen, a visual designer crafting thoughtful experiences and telling stories through
+                design.</p>
+        </section>
+
+        <section>
+            <h2>Accent Text</h2>
+            <h3>CSS selector:</h3>
+            <p>.accent</p>
+            <h3>Sample code:</h3>
+            <code>
+            &lt;p&gt;Hi, I'm &lt;span class="accent"&gt;Aiden Nguyen&lt;/span&gt;,
+            a visual designer.&lt;/p&gt;
+            </code>
+
+            <h3>Rendered element:</h3>
+            <p>Hi, I'm <span class="accent">Aiden Nguyen</span>, a visual designer.</p>
+        </section>
+
+        <section>
+            <h2>Project Meta Label</h2>
+            <h3>CSS selector:</h3>
+            <p>.project-meta</p>
+            <h3>Sample code:</h3>
+            <code>&lt;p class="project-meta"&gt;STORMHACKS 2025&lt;/p&gt;</code>
+
+            <h3>Rendered element:</h3>
+            <p class="project-meta">STORMHACKS 2025</p>
+        </section>
+
+    </section>
+
+
+
+    <!-- interactive elements -->
+    <section id="interactive_elements">
+        <h2 class="element-text">Interactive Elements</h2>
+
+        <section>
+            <h2>Navigation Link</h2>
+
+            <h3>CSS selector:</h3>
+            <p>.nav-links a</p>
+
+            <h3>Sample code:</h3>
+            <code>&lt;a href="#projects"&gt;Projects&lt;/a&gt;</code>
+
+            <h3>Rendered element:</h3>
+            <a href="#projects">Projects</a>
+        </section>
+
+        <section>
+            <h2>Scroll Cue</h2>
+
+            <h3>CSS selector:</h3>
+            <p>.hero-scroll</p>
+
+            <h3>Sample code:</h3>
+            <code>&lt;a href="#intro" class="hero-scroll"&gt;Scroll&lt;/a&gt;</code>
+
+            <h3>Rendered element:</h3>
+            <a href="#intro" class="hero-scroll">Scroll</a>
+        </section>
+
+        <section>
+            <h2>In-text Link</h2>
+
+            <h3>CSS selector:</h3>
+            <p>a</p>
+
+            <h3>Sample code:</h3>
+            <code>
+            &lt;a href="https://alistapart.com/article/creating-style-guides/" target="_blank"&gt;Style Guide Information&lt;/a&gt;
+            </code>
+
+            <h3>Rendered element:</h3>
+            <a href="https://alistapart.com/article/creating-style-guides/" target="_blank">Style Guide Information</a>
+        </section>
+
+        <section>
+            <h2>Footer Contact Link</h2>
+
+            <h3>CSS selector:</h3>
+            <p>.footer-col a</p>
+
+            <h3>Sample code:</h3>
+            <code>
+            &lt;a href="mailto:hello@example.com"&gt;Email&lt;/a&gt;<br>
+            &lt;a href="#"&gt;Instagram&lt;/a&gt;<br>
+            </code>
+
+            <h3>Rendered element:</h3>
+            <a href="aiden_nguyen@sfu.ca">Email</a>
+            <a href="https://www.instagram.com/aiden.nguyyen/">Instagram</a>
+        </section>
+
+        <section>
+            <h2>Gallery Image Tilt</h2>
+
+            <h3>CSS selector:</h3>
+            <p>.gallery-grid img</p>
+
+            <h3>Sample code:</h3>
+            <code>
+                &lt;div class="gallery-grid"&gt;<br>
+                    &lt;img src="img/gallery1.jpg" alt="Gallery image one"&gt;<br>
+                    &lt;img src="img/gallery2.png" alt="Gallery image two"&gt;<br>
+                &lt;/div&gt;<br>
+            </code>
+
+            <h3>Rendered element:</h3>
+            <div class="about-body">
+                <div class="gallery-grid">
+                    <img src="img/gallery1.jpg" alt="Gallery image one">
+                    <img src="img/gallery2.png" alt="Gallery image two">
+                    <img src="img/gallery3.JPG" alt="Gallery image three">
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+
+
+    <!-- combined elements-->
+    <section id="combined_elements">
+        <h2 class="element-text">Combined Elements</h2>
+
+        <section>
+            <h2>Main Navigation</h2>
+
+            <h3>CSS selector:</h3>
+            <p>.site-header, .nav, .nav-brand, .nav-links</p>
+
+            <h3>Sample code:</h3>
+            <code>
+                &lt;header class="site-header"&gt;<br>
+                    &lt;nav class="nav"&gt;<br>
+                        &lt;a href="index.html" class="nav-brand"&gt;Aiden Nguyen&lt;/a&gt;<br>
+                        &lt;button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"&gt;<br>
+                            &lt;span class="nav-toggle-bar"&gt;&lt;/span&gt;<br>
+                            &lt;span class="nav-toggle-bar"&gt;&lt;/span&gt;<br>
+                            &lt;span class="nav-toggle-bar"&gt;&lt;/span&gt;<br>
+                        &lt;/button&gt;<br>
+                        &lt;ul class="nav-links" id="navLinks"&gt;<br>
+                            &lt;li&gt;&lt;a href="about.html"&gt;About Me&lt;/a&gt;&lt;/li&gt;<br>
+                            &lt;li&gt;&lt;a href="index.html#projects"&gt;Projects&lt;/a&gt;&lt;/li&gt;<br>
+                            &lt;li&gt;&lt;a href="index.html#contact" class="nav-contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;<br>
+                        &lt;/ul&gt;<br>
+                    &lt;/nav&gt;<br>
+                &lt;/header&gt;<br>
+            </code>
+
+            <h3>Rendered element:</h3>
+            <header class="site-header">
+                <nav class="nav">
+                    <a href="index.html" class="nav-brand">Aiden Nguyen</a>
+                    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"
+                        aria-controls="navLinks">
+                        <span class="nav-toggle-bar"></span>
+                        <span class="nav-toggle-bar"></span>
+                        <span class="nav-toggle-bar"></span>
+                    </button>
+
+                    <ul class="nav-links" id="navLinks">
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="index.html#projects">Projects</a></li>
+                        <li><a href="index.html#contact" class="nav-contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </section>
+
+        <section>
+            <h2>Hero</h2>
+
+            <h3>CSS selector:</h3>
+            <p>.hero, .hero-title, .hero-scroll</p>
+
+            <h3>Sample code:</h3>
+            <code>
+            &lt;section class="hero"&gt;<br>
+                &lt;h1 class="hero-title"&gt;Connecting&lt;br&gt;with Content&lt;/h1&gt;<br>
+                &lt;a href="#intro" class="hero-scroll"&gt;Scroll&lt;/a&gt;<br>
+            &lt;/section&gt;<br>
+            </code>
+
+            <h3>Rendered element:</h3>
+            <section class="hero">
+                <h1 class="hero-title">Connecting<br>with Content</h1>
+                <a href="#intro" class="hero-scroll">Scroll</a>
+            </section>
+        </section>
+
+        <section>
+            <h2>Intro Block</h2>
+
+            <h3>CSS selector:</h3>
+            <p>.intro, .intro-text, .intro-image</p>
+
+            <h3>Sample code:</h3>
+            <code>
+            &lt;section class="intro"&gt;<br>
+                &lt;div class="intro-text"&gt;<br>
+                    &lt;p&gt;&lt;strong&gt;Hi, I'm &lt;span class="accent"&gt;Aiden Nguyen&lt;/span&gt;,&lt;/strong&gt;<br>
+                        a visual designer crafting thoughtful experiences and<br>
+                        telling stories through design.&lt;/p&gt;<br>
+                &lt;/div&gt;<br>
+                &lt;div class="intro-image"&gt;<br>
+                    &lt;img src="img/aiden.jpg" alt="Aiden Nguyen"&gt;<br>
+                &lt;/div&gt;<br>
+            &lt;/section&gt;<br>
+            </code>
+
+            <h3>Rendered element:</h3>
+            <section class="intro">
+                <div class="intro-text">
+                    <p><strong>Hi, I'm <span class="accent">Aiden Nguyen</span>,</strong>
+                        a visual designer crafting thoughtful experiences and
+                        telling stories through design.</p>
+                </div>
+                <div class="intro-image">
+                    <img src="img/aiden.png" alt="Aiden Nguyen">
+                </div>
+            </section>
+        </section>
+
+        <section>
+            <h2>Main Navigation</h2>
+
+            <h3>CSS selector:</h3>
+            <p>.site-header, .nav, .nav-brand, .nav-links, .nav-contact</p>
+
+            <h3>Sample code:</h3>
+            <code>
+            &lt;header class="site-header"&gt;<br>
+                &lt;nav class="nav"&gt;<br>
+                    &lt;a href="index.html" class="nav-brand"&gt;Aiden Nguyen&lt;/a&gt;<br>
+                    &lt;ul class="nav-links"&gt;<br>
+                        &lt;li&gt;&lt;a href="about.html"&gt;About Me&lt;/a&gt;&lt;/li&gt;<br>
+                        &lt;li&gt;&lt;a href="#projects"&gt;Projects&lt;/a&gt;&lt;/li&gt;<br>
+                        &lt;li&gt;&lt;a href="#contact" class="nav-contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;<br>
+                    &lt;/ul&gt;<br>
+                &lt;/nav&gt;<br>
+            &lt;/header&gt;<br>
+            </code>
+
+            <h3>Rendered element:</h3>
+            <header class="site-header">
+                <nav class="nav">
+                    <a href="index.html" class="nav-brand">Aiden Nguyen</a>
+                    <ul class="nav-links">
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact" class="nav-contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </section>
+
+        <section>
+            <h2>Project Card</h2>
+
+            <h3>CSS selector:</h3>
+            <p>.project-card, .project-name, .project-meta</p>
+
+            <h3>Sample code:</h3>
+            <code>
+            &lt;article class="project-card"&gt;<br>
+                &lt;img src="img/sol.jpg" alt="Sol experimental health app"&gt;<br>
+                &lt;h3 class="project-name"&gt;Sol | Experimental Health App&lt;/h3&gt;<br>
+                &lt;p class="project-meta"&gt;FIGBUILD 2026&lt;/p&gt;<br>
+            &lt;/article&gt;<br>
+            </code>
+
+            <h3>Rendered element:</h3>
+            <article class="project-card">
+                <img src="img/sol.jpg" alt="Sol experimental health app">
+                <h3 class="project-name">Sol | Experimental Health App</h3>
+                <p class="project-meta">FIGBUILD 2026</p>
+            </article>
+        </section>
+
+        <section>
+            <h2>Project Grid</h2>
+
+            <h3>CSS selector:</h3>
+            <p>.projects, .section-title, .project-grid</p>
+
+            <h3>Sample code:</h3>
+            <code>
+            &lt;section class="projects"&gt;<br>
+                &lt;h2 class="section-title"&gt;Recent Projects&lt;/h2&gt;<br>
+                &lt;div class="project-grid"&gt;<br>
+                    &lt;article class="project-card"&gt;...&lt;/article&gt;<br>
+                    &lt;article class="project-card"&gt;...&lt;/article&gt;<br>
+                    &lt;article class="project-card"&gt;...&lt;/article&gt;<br>
+                    &lt;article class="project-card"&gt;...&lt;/article&gt;<br>
+                &lt;/div&gt;<br>
+            &lt;/section&gt;<br>
+            </code>
+
+            <h3>Rendered element:</h3>
+            <section class="projects">
+                <h2 class="section-title">Recent Projects</h2>
+                <div class="project-grid">
+                    <article class="project-card">
+                        <img src="img/sol.png" alt="Sol experimental health app">
+                        <h3 class="project-name">Sol | Experimental Health App</h3>
+                        <p class="project-meta">FIGBUILD 2026</p>
+                    </article>
+                    <article class="project-card">
+                        <img src="img/meal4me.png" alt="Meal4Me AI recipe assistant">
+                        <h3 class="project-name">Meal4Me | AI Recipe Assistant</h3>
+                        <p class="project-meta">STORMHACKS 2025</p>
+                    </article>
+                </div>
+            </section>
+        </section>
+
+
+
+        <section>
+            <h2>Project Hero (Sol)</h2>
+
+            <h3>CSS selector:</h3>
+            <p>.project-hero-sol, .screen-row</p>
+
+            <h3>Sample code:</h3>
+            <code>
+                &lt;section class="project-hero-sol"&gt;<br>
+                    &lt;div class="screen-row"&gt;<br>
+                        &lt;img src="img/sol-screen1.png" alt="Sol app — mind visualization"&gt;<br>
+                        &lt;img src="img/sol-screen2.png" alt="Sol app — emotional intensity"&gt;<br>
+                        &lt;img src="img/sol-screen3.png" alt="Sol app — intellectual engagement"&gt;<br>
+                        &lt;img src="img/sol-screen4.png" alt="Sol app — insights and summary"&gt;<br>
+                    &lt;/div&gt;<br>
+                &lt;/section&gt;<br>
+                </code>
+
+            <h3>Rendered element:</h3>
+            <section class="project-hero-sol">
+                <div class="screen-row">
+                    <img src="img/sol-screen1.png" alt="Sol app — mind visualization with engagement readings">
+                    <img src="img/sol-screen2.png" alt="Sol app — emotional intensity weekly analytics">
+                    <img src="img/sol-screen3.png" alt="Sol app — intellectual engagement weekly analytics">
+                    <img src="img/sol-screen4.png" alt="Sol app — insights and summary screen">
+                </div>
+            </section>
+        </section>
+
+        <section>
+            <h2>Contact Footer</h2>
+
+            <h3>CSS selector:</h3>
+            <p>.site-footer, .footer-eyebrow, .footer-title, .footer-cols, .footer-col</p>
+
+            <h3>Sample code:</h3>
+            <code>
+            &lt;footer class="site-footer"&gt;<br>
+                &lt;p class="footer-eyebrow"&gt;Have a Project in Mind?&lt;/p&gt;<br>
+                &lt;h2 class="footer-title"&gt;Let's Connect&lt;/h2&gt;<br>
+                &lt;div class="footer-cols"&gt;<br>
+                    &lt;div class="footer-col"&gt;<br>
+                        &lt;h3&gt;Contact&lt;/h3&gt;<br>
+                        &lt;a href="tel:+6047040245"&gt;Phone&lt;/a&gt;<br>
+                        &lt;a href="aiden_nguyen@sfu.ca"&gt;Email&lt;/a&gt;<br>
+                    &lt;/div&gt;<br>
+                    &lt;div class="footer-col"&gt;<br>
+                        &lt;h3&gt;Social&lt;/h3&gt;<br>
+                        &lt;a href="#"&gt;Instagram&lt;/a&gt;<br>
+                        &lt;a href="#"&gt;LinkedIn&lt;/a&gt;<br>
+                    &lt;/div&gt;<br>
+                    &lt;div class="footer-col"&gt;<br>
+                        &lt;h3&gt;Resume&lt;/h3&gt;<br>
+                        &lt;a href="#"&gt;Download&lt;/a&gt;<br>
+                    &lt;/div&gt;<br>
+                &lt;/div&gt;<br>
+            &lt;/footer&gt;<br>
+            </code>
+
+            <h3>Rendered element:</h3>
+            <footer class="site-footer">
+                <p class="footer-eyebrow">Have a Project in Mind?</p>
+                <h2 class="footer-title">Let's Connect</h2>
+                <div class="footer-cols">
+                    <div class="footer-col">
+                        <h3>Contact</h3>
+                        <a href="tel:+6047040245">Phone</a>
+                        <a href="aiden_nguyen@sfu.ca">Email</a>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Social</h3>
+                        <a href="#">Instagram</a>
+                        <a href="#">LinkedIn</a>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Resume</h3>
+                        <a href="#">Download</a>
+                    </div>
+                </div>
+            </footer>
+        </section>
+
+    </section>
+
+
+
+    <!-- BRAND COMPONENTS SECTION // -->
+    <section id="brand_components">
+        <h2 class="element-text">Brand Components</h2>
+
+        <section>
+            <h2>Color Palette</h2>
+            <div class="palette">
+                <div class="color-box black">
+                    <p>#111111</p>
+                </div>
+                <div class="color-box accent-blue">
+                    <p>#2E6BE6</p>
+                </div>
+                <div class="color-box grey">
+                    <p>#6E6E6E</p>
+                </div>
+                <div class="color-box light-grey">
+                    <p>#E5E5E5</p>
+                </div>
+                <div class="color-box off-white">
+                    <p>#FAFAFA</p>
+                </div>
+            </div>
+
+            <h3>Colour Reasoning</h3>
+            <p>The palette is built around a near-black and an off-white for a clean, gallery-like
+                feel that keeps attention on the work. A single blue accent highlights the name and
+                key links, while two greys handle captions and dividers. Replace the hex values below
+                with your actual colours.</p>
+        </section>
+
+        <section>
+            <h2>Font</h2>
+            <p style="font-weight: 300;">General Sans &mdash; Light (300)</p>
+            <p style="font-weight: 400;">General Sans &mdash; Regular (400)</p>
+            <p style="font-weight: 500;">General Sans &mdash; Medium (500)</p>
+            <p style="font-weight: 600;">General Sans &mdash; Semibold (600)</p>
+            <p style="font-weight: 700;">General Sans &mdash; Bold (700)</p>
+
+            <h3>Font Reasoning</h3>
+            <p>The site uses a single typeface, General Sans, across its full weight range.
+                Large headings use the heavier weights (600&ndash;700) for impact, body text sits at
+                Regular (400), and small labels like project tags use Regular or Medium. Using one
+                family with varied weights keeps the design cohesive and modern.</p>
+        </section>
+
+        <section class=style-img>
+            <h2>Images</h2>
+            <img src="img/aiden.png" alt="Aiden Nguyen portrait">
+            <img src="img/sol.png" alt="Sol experimental health app">
+            <img src="img/meal4me.png" alt="Meal4Me AI recipe assistant">
+            <img src="img/meal4me-icon.png" alt="Meal4Me icon">
+            <img src="img/sol-app1.png" alt="SOL app icon black">
+            <img src="img/sol-app2.png" alt="SOL app icon gradient">
+            <img src="img/gallery1.jpg" alt="Gallery image one">
+            <img src="img/gallery2.png" alt="Gallery image two">
+            <img src="img/gallery3.JPG" alt="Gallery image three">
+            <img src="img/gallery4.jpg" alt="Gallery image four">
+            <img src="img/gallery5.png" alt="Gallery image five">
+            <img src="img/gallery6.jpg" alt="Gallery image six">
+
+        </section>
+
+        <section>
+            <h2>Basic Brand Idea</h2>
+            <h3>What does the site do, or offer?</h3>
+            <p>It is the personal portfolio of Aiden Nguyen, a visual and UX/UI designer. The homepage
+                introduces Aiden, showcases recent projects, and gives visitors a way to get in touch. The branding
+                takes on the professional, consise approach.</p>
+
+            <h3>Who is the site for?</h3>
+            <p>Potential clients, collaborators, and employers seeking specialties in UX/UI and visual design. They also
+                are looking to understand Aiden's design
+                style and see examples of past work.</p>
+
+            <h3>Why might a visitor reach out?</h3>
+            <p>The clear, confident layout and curated project grid are meant to build trust quickly
+                and make it easy for someone with a project in mind to start a conversation.</p>
+        </section>
+
+    </section>
+
+
+    <section id="templates">
+        <h2 class="element-text">Templates</h2>
+        <a href="index.html">Home Page (Template)</a><br>
+        <br><a href="about.html">About Me Page (Template)</a>
+    </section>
+
+    <script src="js/nav.js"></script>
+
+</body>
+
+</html>

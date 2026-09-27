@@ -1,0 +1,108 @@
+
+/* General Sans font family */
+
+@font-face {
+    font-family: "GeneralSans";
+    src: url("fonts/GeneralSans-Light.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GeneralSans";
+    src: url("fonts/GeneralSans-LightItalic.woff2") format("woff2");
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "GeneralSans";
+    src: url("fonts/GeneralSans-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GeneralSans";
+    src: url("fonts/GeneralSans-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GeneralSans";
+    src: url("fonts/GeneralSans-Semibold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GeneralSans";
+    src: url("fonts/GeneralSans-SemiboldItalic.woff2") format("woff2");
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "GeneralSans";
+    src: url("fonts/GeneralSans-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GeneralSans";
+    src: url("fonts/GeneralSans-BoldItalic.woff2") format("woff2");
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* Variable font — covers the full weight range in one file */
+@font-face {
+    font-family: "GeneralSans-Variable";
+    src: url("fonts/GeneralSans-Variable.woff2") format("woff2-variations");
+    font-weight: 200 700;
+    font-style: normal;
+}
+/* Helvetica Neue (homepage redesign) */
+
+@font-face {
+    font-family: "HelveticaNeue";
+    src: url("fonts/HelveticaNeue-Thin.otf") format("opentype");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "HelveticaNeue";
+    src: url("fonts/HelveticaNeue-Roman.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "HelveticaNeue";
+    src: url("fonts/HelveticaNeueItalic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "HelveticaNeue";
+    src: url("fonts/HelveticaNeue-Medium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* heavy condensed is its own family since it's a different width */
+@font-face {
+    font-family: "HelveticaNeue-HeavyCond";
+    src: url("fonts/HelveticaNeue-HeavyCond.otf") format("opentype");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}

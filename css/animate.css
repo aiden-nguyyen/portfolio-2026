@@ -1,0 +1,123 @@
+/* homepage */
+/* scroll bobbing https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@keyframes*/
+@keyframes bob {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(0.5rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.hero-scroll {
+    animation: bob 1.5s ease-in-out infinite;
+}
+
+/* title letters bob in one at a time (spans added by js/hero.js) */
+@keyframes letter-in {
+    0% {
+        opacity: 0;
+        transform: translateY(0.4em);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(-0.08em);
+    }
+
+    80% {
+        transform: translateY(0.02em);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* a single letter hops up and settles when the cursor passes over it */
+@keyframes letter-bob {
+    0% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-0.12em);
+    }
+
+    75% {
+        transform: translateY(0.03em);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.split-word {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.split-letter {
+    display: inline-block;
+    animation: letter-in 0.6s ease-out both;
+    animation-delay: calc(var(--i) * 0.05s);
+}
+
+/* "with content" and "let's connect" fade in as whole lines instead */
+@keyframes letter-fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.title-fade .split-letter {
+    animation: letter-fade 0.8s ease-in-out both;
+    animation-delay: calc(var(--i) * 0.05s);
+}
+
+/* "Let's Connect" holds its letters hidden until it scrolls into view */
+.is-waiting .split-letter {
+    animation-play-state: paused;
+}
+
+/* once bobbed in, drop that animation so it doesn't replay after a hover bob */
+.split-letter.is-ready {
+    animation: none;
+}
+
+.split-letter.is-bobbing {
+    animation: letter-bob 0.5s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .split-letter,
+    .title-fade .split-letter,
+    .split-letter.is-bobbing {
+        animation: none;
+    }
+}
+
+
+
+.about-body img {
+  transform: rotate(0deg);
+  transition: transform 0.45s var(--spring);
+}
+
+.about-body img:nth-child(odd):hover {
+  transform: rotate(-2deg);
+}
+.about-body img:nth-child(even):hover {
+  transform: rotate(2deg);
+}

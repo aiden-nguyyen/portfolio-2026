@@ -1,0 +1,445 @@
+/* homepage redesign: grey page, thin black grid lines, Helvetica Neue
+   loaded after main.css on index.html only, everything scoped to body.home */
+
+.home {
+    --ink: #121212;
+    --page: #f0f0f0;
+    --muted: #6e6e6e;
+    --line-colour: #DAD9D9;
+    --line: 1px solid var(--line-colour);
+    /* the nav's left column (902px of 1512 in the mockup) */
+    --split: 60%;
+    --nav-height: 41px;
+    --ui-text: 1.15rem;
+
+    background-color: var(--page);
+    color: var(--ink);
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: -0.05em;
+}
+
+/* everything on the homepage is lowercase except the display titles and the event names */
+.home .nav,
+.home .hero-scroll,
+.home .section-title,
+.home .project-name,
+.home .site-footer {
+    text-transform: lowercase;
+}
+
+/* ---------- nav: a grey bar split into cells by the grid lines ---------- */
+.home .site-header {
+    background-color: var(--page);
+    border-bottom: var(--line);
+}
+
+.home .nav {
+    grid-template-columns: var(--split) 1fr;
+    align-items: stretch;
+    height: calc(var(--nav-height) - 1px);
+}
+
+.home .nav-brand,
+.home .nav-links a {
+    display: flex;
+    align-items: flex-end;
+    margin: 0;
+    padding: 0 10px 8px;
+    background-color: var(--page);
+    color: var(--ink);
+    font-weight: 400;
+    line-height: 1;
+    text-decoration: none;
+    transition: background-color 0.25s ease-in-out;
+}
+
+.home .nav-brand {
+    font-size: 1.4rem;
+}
+
+.home .nav-links {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.home .nav-links li {
+    display: flex;
+    border-left: var(--line);
+}
+
+.home .nav-links a {
+    flex: 1;
+    font-size: var(--ui-text);
+}
+
+/* hover: same as the project boxes, the cell lights up from grey to white
+   (it stays full size so the white fills the cell edge to edge) */
+.home .nav-brand:hover,
+.home .nav-links a:hover {
+    transform: none;
+    background-color: #ffffff;
+    color: var(--ink);
+}
+
+/* while the text inside shrinks ever so slightly, towards its bottom-left corner */
+.home .nav-text {
+    display: inline-block;
+    transform-origin: left bottom;
+    transition: transform 0.4s var(--spring);
+}
+
+.home .nav-brand:hover .nav-text,
+.home .nav-links a:hover .nav-text {
+    transform: scale(0.95);
+}
+
+/* ---------- display titles (hero + footer) ---------- */
+.home .big-title {
+    margin: 0;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+}
+
+.home .title-line {
+    display: block;
+    white-space: nowrap;
+}
+
+.home .title-heavy {
+    font-family: "HelveticaNeue-HeavyCond", "Helvetica Neue", sans-serif;
+    font-weight: 800;
+}
+
+.home .title-thin {
+    font-weight: 100;
+}
+
+.home .title-italic {
+    font-style: italic;
+}
+
+/* ---------- hero ---------- */
+.home .hero {
+    box-sizing: border-box;
+    min-height: calc(100vh - var(--nav-height));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: stretch;
+    gap: 0;
+    padding: 0 0 1.8vw;
+}
+
+/* sits centred under the title, still bobbing */
+.home .hero-scroll {
+    align-self: center;
+    margin: 1.2vw 0 0;
+    font-style: italic;
+    font-size: var(--ui-text);
+    color: var(--muted);
+}
+
+.home .hero-title {
+    font-size: 1rem;
+    line-height: 0.8;
+}
+
+/* sized in vw so each line spans the full width at any screen size */
+.home .hero-title .title-line-1 {
+    font-size: 20.5vw;
+    /* tight tracking so the line spans the page edge to edge, like the mockup */
+    letter-spacing: -0.045em;
+    padding-left: 0.3vw;
+}
+
+.home .hero-title .title-line-2 {
+    font-size: 14.4vw;
+    letter-spacing: -0.034em;
+    margin-top: 1.9vw;
+}
+
+/* ---------- projects ---------- */
+.home .projects {
+    margin: 0;
+    padding: 0;
+    border-top: none;
+    scroll-margin-top: var(--nav-height);
+}
+
+/* "recent projects" gets the nav brand treatment: a white cell, same size text,
+   sitting in the bottom left corner */
+.home .section-title {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    width: 19.8%;
+    min-width: max-content;
+    height: calc(var(--nav-height) - 1px);
+    margin: 0;
+    padding: 0 10px 8px;
+    box-sizing: border-box;
+    border-right: var(--line);
+    background-color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.home .project-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+}
+
+.home .project-card {
+    display: block;
+    padding: 0.3rem 0.45rem 1rem 0.5rem;
+    background-color: var(--page);
+    transition: background-color 0.25s ease-in-out;
+}
+
+.home .project-card + .project-card {
+    border-left: var(--line);
+}
+
+/* hover: the cell lights up white (like the nav boxes) while the content shrinks */
+.home .project-card:hover,
+.home .project-card:focus-visible {
+    background-color: #ffffff;
+}
+
+.home .project-card img {
+    display: block;
+    /* curtain reveal (js/reveal.js): clip from the bottom up to hide, then open top to bottom */
+    clip-path: inset(0 0 0 0);
+    transition: transform 0.4s var(--spring),
+        clip-path 0.9s cubic-bezier(0.65, 0, 0.35, 1) var(--curtain-delay, 0s);
+}
+
+.home .project-card img.is-curtained {
+    clip-path: inset(0 0 100% 0);
+}
+
+/* image and text shrink together as one group on hover */
+.home .project-card-inner {
+    transition: transform 0.4s var(--spring);
+}
+
+.home .project-card:hover .project-card-inner,
+.home .project-card:focus-visible .project-card-inner {
+    transform: scale(0.97);
+}
+
+/* the group shrinks instead, so the image doesn't shrink on its own */
+.home .project-card:hover img,
+.home .project-card:focus-visible img {
+    transform: none;
+}
+
+.home .project-name,
+.home .project-meta {
+    /* no inset: lines up with the image's left edge */
+    padding: 0;
+    font-size: var(--ui-text);
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.home .project-name {
+    margin: 1.6rem 0 0.35rem;
+}
+
+.home .project-meta {
+    margin: 0;
+    color: var(--muted);
+}
+
+/* ---------- footer: big question + title, then one row of links ---------- */
+.home .site-footer {
+    max-width: none;
+    margin: 0;
+    padding: 0 0 9rem;
+    color: var(--ink);
+}
+
+.home .footer-title {
+    padding: 9vw 0 2.6vw;
+    line-height: 0.8;
+    color: var(--ink);
+}
+
+.home .footer-question {
+    font-size: 6vw;
+    letter-spacing: -0.046em;
+    text-transform: lowercase;
+    padding-left: 0.4vw;
+}
+
+.home .footer-connect {
+    /* a touch smaller than full width so it stops short of the right edge */
+    font-size: 13.9vw;
+    margin-top: 3vw;
+}
+
+/* tracking split so the heavy letters don't touch; the italic takes up the difference */
+.home .footer-connect .title-heavy {
+    letter-spacing: -0.02em;
+}
+
+.home .footer-connect .title-italic {
+    letter-spacing: -0.045em;
+}
+
+/* one line: contact, social, resume split the left half evenly (a sixth each),
+   the credit sits at 80% across; label in black, links in grey */
+.home .footer-bottom {
+    display: grid;
+    grid-template-columns: repeat(3, calc(100% / 6)) 30% 20%;
+    align-items: baseline;
+    padding: 0.7rem 10px 0;
+}
+
+.home .footer-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.3rem 0.75rem;
+    /* keeps the links clear of the next group's label */
+    padding-right: 2rem;
+}
+
+/* the label pushes its links to the far end of the column,
+   so the space sits between the label and its links */
+.home .footer-group > :first-child {
+    margin-right: auto;
+}
+
+.home .footer-group:last-child {
+    grid-column: 5;
+}
+
+.home .footer-group h3 {
+    margin: 0;
+    color: var(--ink);
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: inherit;
+    text-transform: lowercase;
+}
+
+.home .footer-group p {
+    margin: 0;
+    color: var(--ink);
+    font-size: var(--ui-text);
+}
+
+.home .footer-group a {
+    color: var(--muted);
+    font-size: var(--ui-text);
+    text-decoration: none;
+    transition: color 0.15s ease-in-out;
+}
+
+.home .footer-group a:hover {
+    color: var(--ink);
+}
+
+/* ---------- horizontal lines draw in left to right (js/reveal.js) ---------- */
+/* data-line="top" / "bottom" marks which edge gets the line */
+.home [data-line] {
+    position: relative;
+}
+
+.home [data-line]::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--line-colour);
+    transform-origin: left center;
+    transition: transform 1.8s cubic-bezier(0.65, 0, 0.35, 1);
+    pointer-events: none;
+}
+
+.home [data-line="bottom"]::after {
+    bottom: 0;
+}
+
+.home [data-line="top"]::after {
+    top: 0;
+}
+
+/* hidden until scrolled to; without JS the class is never added, so the lines just show */
+.home [data-line].line-waiting::after {
+    transform: scaleX(0);
+}
+
+/* ---------- tablet: projects stack ---------- */
+@media (max-width: 55rem) {
+    .home .project-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .home .project-card + .project-card {
+        border-left: none;
+        border-top: var(--line);
+    }
+
+    .home .footer-bottom {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 1rem;
+    }
+
+    .home .footer-group:last-child {
+        grid-column: auto;
+    }
+
+}
+
+/* ---------- phone: hamburger menu ---------- */
+@media (max-width: 35rem) {
+    .home .nav {
+        grid-template-columns: 1fr auto;
+        height: auto;
+    }
+
+    .home .nav-brand {
+        height: calc(var(--nav-height) - 1px);
+    }
+
+    .home .nav-toggle {
+        padding: 0 1.25rem;
+        border-left: var(--line);
+        justify-content: center;
+    }
+
+    /* open menu: the three links sit in a row of cells below the brand */
+    .home .nav-links li {
+        border-top: var(--line);
+    }
+
+    .home .nav-links li:first-child {
+        border-left: none;
+    }
+
+    .home .nav-links a {
+        height: 2.75rem;
+        padding: 0;
+        text-align: left;
+        border-top: none;
+    }
+
+    .home .hero {
+        min-height: 70vh;
+    }
+
+    .home .section-title {
+        width: auto;
+        border-right: none;
+    }
+
+    .home .footer-bottom {
+        grid-template-columns: 1fr;
+    }
+}

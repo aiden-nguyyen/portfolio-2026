@@ -1,0 +1,809 @@
+/* for scroll https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/scroll-behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* shared springy curve: overshoots past the end then settles (same feel as the cursor) */
+:root {
+    --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* style guide — color palette */
+.palette {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.color-box {
+    display: flex;
+    align-items: flex-end;
+    min-height: 8rem;
+    padding: 1rem;
+    border: .08rem solid #e5e5e5;
+    border-radius: 0.25rem;
+}
+
+.color-box p {
+    margin: 0;
+    font-size: 0.85rem;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 1rem;
+    border-radius: 0.2rem;
+}
+
+/* the actual swatch colors */
+.color-box.black      { background-color: #111111; }
+.color-box.accent-blue { background-color: #2E6BE6; }
+.color-box.grey       { background-color: #6E6E6E; }
+.color-box.light-grey { background-color: #E5E5E5; }
+.color-box.off-white  { background-color: #FAFAFA; }
+
+/* style guide — muted in-text links */
+.style-guide a {
+    color: #6e6e6e;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.style-guide a:hover {
+    color: #2380C2;
+}
+
+.style-img {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: 1rem;
+}
+
+.style-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.25rem;
+}
+
+/* font weight */
+body {
+    font-family: "GeneralSans", sans-serif;
+    font-weight: 400;
+}
+
+/* Bold */
+h1 {
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Semibold */
+.site-header {
+    border-bottom: .08rem solid #e5e5e5;
+    background-color: #fafafa;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* nav bar */
+.nav {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+}
+
+.nav-brand {
+    display: block;
+    padding: 1rem 1rem 1rem 2rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #111111;
+    text-decoration: none;
+    transition: transform 0.4s var(--spring), background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.nav-brand:hover {
+    transform: scale(0.98);
+    background-color: #d8d8d8;
+    color: #2380C2;
+}
+
+.nav-links {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    display: block;
+    padding: 1rem 2rem 1rem;
+    background-color: #f5f5f5;
+    color: #333333;
+    text-decoration: none;
+    transition: transform 0.4s var(--spring), background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.nav-links a:hover {
+    transform: scale(0.95);
+    background-color: #d8d8d8;
+    color: #2380C2;
+}
+
+/* Contact button slightly darker than the rest */
+.nav-links .nav-contact {
+    background-color: #ededed;
+}
+
+.hero-title {
+    font-size: 10rem;
+    line-height: 10rem;
+}
+
+/* hero page */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.hero-scroll {
+    color: #333333;
+    text-decoration: none;
+}
+
+.intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+    padding: 4rem;
+    max-width: 45rem;
+    margin: 0 auto;
+}
+
+.intro-image img {
+    width: 100%;
+    height: 20rem;
+    object-fit: contain;
+}
+
+/* projects */
+.projects {
+    /* max-width: 75rem; */
+    margin: 0 auto;
+    padding: 1rem;
+    border-top: .08rem solid #e5e5e5;
+    border-bottom: .08rem solid #e5e5e5;
+    /* for the nav bar not to cover the sub title https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/scroll-margin-top */
+    scroll-margin-top: 6rem;
+}
+
+.section-title {
+    margin-bottom: 2rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.project-card {
+    text-decoration: none;
+    color: inherit;
+    gap: 0rem;
+}
+
+.project-card img {
+    width: 100%;
+    object-fit: contain;
+    background-color: #f0f0f0;
+    transition: transform 0.4s var(--spring);
+}
+
+/* hover (and keyboard focus): image shrinks slightly inside its box */
+.project-card:hover img,
+.project-card:focus-visible img {
+    transform: scale(0.97);
+}
+
+.project-name {
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.project-meta {
+    color: #6e6e6e;
+}
+
+/* footer */
+.site-footer {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 6rem 4rem 4rem;
+    color: #111111;
+}
+
+.footer-eyebrow {
+    font-weight: 500;
+    color: #6e6e6e;
+    margin-bottom: 0.5rem;
+}
+
+/* how to do clamp https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/clamp */
+.footer-title {
+    font-weight: 600;
+    font-size: clamp(3rem, 10vw, 7rem);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin: 0 0 3rem;
+    color: #111111;
+}
+
+/* auto fit tutorial https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/ */
+.footer-cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+    gap: 2rem;
+    border-top: .08rem solid #e5e5e5;
+    padding-top: 2.5rem;
+}
+
+.footer-col h3 {
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #6e6e6e;
+    margin: 0 0 1rem;
+}
+
+.footer-col a {
+    display: block;
+    width: fit-content;
+    font-size: 1.1rem;
+    color: #111111;
+    text-decoration: none;
+    margin-bottom: 0.6rem;
+    transition: color 0.15s ease;
+}
+
+.footer-col a:hover {
+    color: #2380C2;
+}
+
+/* project app webpage */
+.project-hero-sol {
+    background-color: #ede4e0;
+    padding: 3rem;
+}
+
+.project-hero-meal {
+    background-color: #FAF5F1;
+    padding: 3rem;
+}
+
+.sol-body {
+    background-color: #FFF9F5;
+}
+
+.meal4me-body {
+    background-color: #FFFFFF;
+}
+
+.screen-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 55rem;
+    margin: 0 auto;
+}
+
+.screen-row img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* title and details*/
+.project-intro {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 4rem;
+}
+
+/* LEFT COLUMN — title, subtitle, brief */
+.project-title {
+    all: revert;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 1rem;
+}
+
+.project-subtitle {
+    font-size: 1.4rem;
+    color: #444444;
+    margin: 0 0 2rem;
+}
+
+.project-lead {
+    line-height: 1.6;
+}
+
+/* RIGHT COLUMN — role, timeline, tools */
+.project-details {
+    display: grid;
+    gap: 2rem;
+    align-content: start;
+}
+
+.detail-block h2 {
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 0 0 0.5rem;
+}
+
+.detail-block p {
+    color: #444444;
+    margin: 0 0 0.25rem;
+}
+
+/*concept */
+.case-study {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 0 4rem;
+
+}
+
+.concept-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.concept-row-meal {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.meal-concept-image {
+    width: 100%;
+    height: auto;
+}
+
+.concept-icons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.concept-icons img {
+    width: 100%;
+    height: auto;
+}
+
+.case-section {
+    border-top: .1rem solid #e5e5e5;
+    padding: 4rem 0;
+}
+
+/* small uppercase label */
+.case-eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #6e6e6e;
+    margin: 0 0 1rem;
+}
+
+/* bold section headline */
+.case-headline {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 1.5rem;
+}
+
+.case-subhead {
+    font-weight: 650;
+}
+
+.case-body {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0 0 2.5rem;
+}
+
+/* full-width section image */
+.case-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.problem-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.problem-row img {
+    width: 100%;
+    height: auto;
+}
+
+
+.project-nav-footer {
+    display: flex;
+    justify-content: space-between;
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 3rem 4rem;
+    border-top: .08rem solid #e5e5e5;
+}
+
+.project-nav-footer a {
+    font-weight: 600;
+    color: #111111;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.project-nav-footer a:hover {
+    color: #2380C2;
+}
+
+/* about page */
+.accent {
+    color: #2380C2;
+}
+
+.accent-sol {
+    color: #F27330;
+}
+
+.accent-meal {
+    color: #597A5A;
+}
+
+
+.about-body {
+    background-color: #FFFFFF;
+}
+
+/* photo + bio two-column */
+.about-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 5rem 4rem;
+}
+
+.about-photo img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.about-eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #6e6e6e;
+    margin: 0 0 1rem;
+}
+
+.about-title {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 2rem;
+}
+
+.about-body p,
+.about-text .about-body {
+    line-height: 1.7;
+    margin: 0 0 1.5rem;
+}
+
+/* gallery */
+.about-gallery {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 2rem 4rem 5rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.gallery-grid img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.nav-toggle {
+    display: none;
+    grid-column: 2;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+/* The three bars */
+.nav-toggle-bar {
+    display: block;
+    width: 1.6rem;
+    height: 0.15rem;
+    background-color: #333333;
+    transition: transform 0.45s var(--spring), opacity 0.3s ease-in-out;
+}
+
+@media (max-width : 61rem) {
+    .hero-title {
+        font-size: 14vw;
+        line-height: 14vw;
+        min-width: 1rem;
+    }
+}
+
+/* nav java animation */
+@media (max-width: 35rem) {
+
+    /* Show the hamburger button */
+    .nav-toggle {
+        display: flex;
+    }
+
+    /* Stack the links vertically and hide them by default */
+    .nav-links {
+        grid-column: 1 / -1;
+        /* span full width below the brand */
+        grid-template-columns: 1fr;
+        /* one column = stacked */
+        display: none;
+    }
+
+    /* When JS adds .open, reveal the stacked links */
+    .nav-links.open {
+        display: grid;
+    }
+
+    /* Make each link full-width and centered in the stack */
+    .nav-links a {
+        padding: 1rem 2rem;
+        text-align: center;
+        border-top: .08rem solid #e5e5e5;
+    }
+
+    /* Animate the bars into an X when menu is open */
+    .nav-toggle.open .nav-toggle-bar:nth-child(1) {
+        transform: translateY(0.5rem) rotate(45deg);
+    }
+
+    .nav-toggle.open .nav-toggle-bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle.open .nav-toggle-bar:nth-child(3) {
+        transform: translateY(-0.5rem) rotate(-45deg);
+    }
+}
+
+@media (max-width: 35rem) {
+    .intro {
+        gap: 0rem;
+        padding: 1rem;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .intro-image {
+        order: -1;
+    }
+
+    .site-footer {
+        padding: 1rem;
+    }
+
+    .footer-cols {
+        display: grid;
+        gap: 1rem;
+        padding-top: 1rem;
+
+    }
+
+    .project-nav-footer {
+        padding: 1rem;
+    }
+
+}
+
+@media (max-width: 55rem) {
+
+    .project-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 53rem) {
+    .about-intro {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 31rem) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+/* sol page */
+@media (max-width: 45rem) {
+
+
+
+    .screen-row {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        margin: 0;
+    }
+
+    .project-intro {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .project-details {
+        grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+    }
+
+    .case-study {
+        margin: 0 auto;
+        padding: 1rem;
+
+    }
+}
+
+@media (max-width: 38rem) {
+    .project-hero-sol {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 64rem) {
+
+    .concept-icons {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0rem;
+        justify-content: center;
+    }
+
+    .concept-icons img {
+        width: 50%;
+        height: auto;
+    }
+
+    .problem-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .problem-row img {
+        order: -1;
+    }
+
+
+
+}
+
+@media (max-width: 55rem) {
+
+    .concept-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .concept-icons {
+        order: -1;
+        grid-template-columns: 1fr 1fr;
+        padding: 0rem 2rem;
+        gap: 1rem;
+    }
+
+    .concept-icons img {
+        width: 100%;
+        height: auto;
+    }
+
+    .concept-row-meal {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .concept-row-meal img {
+        order: -1;
+    }
+
+}
+/* custom cursor (element added by js/cursor.js) */
+.has-custom-cursor,
+.has-custom-cursor * {
+    cursor: none;
+}
+
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.cursor.is-visible {
+    opacity: 1;
+}
+
+/* the dot is centred on the mouse point, the outer .cursor handles position */
+.cursor-dot {
+    display: block;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin: -0.625rem 0 0 -0.625rem;
+    border-radius: 50%;
+    background-color: rgba(90, 90, 90, 0.65);
+    /* the size curve overshoots past 1 then settles, giving the springy bounce */
+    transition: transform 0.45s var(--spring), background-color 0.25s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* consumed: shrinks and fades away where it is over a link or button,
+   eases in here, then springs back out using the transition above when leaving */
+.cursor.is-hover .cursor-dot {
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, background-color 0.25s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.cursor.is-down:not(.is-hover) .cursor-dot {
+    transform: scale(1.4);
+    background-color: rgba(60, 60, 60, 0.6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cursor,
+    .cursor-dot {
+        transition: none;
+    }
+}
