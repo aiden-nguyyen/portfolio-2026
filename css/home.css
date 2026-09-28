@@ -197,8 +197,13 @@
     transition: background-color 0.25s ease-in-out;
 }
 
-.home .project-card + .project-card {
+/* right-hand column gets the divider; every row after the first gets a top line */
+.home .project-card:nth-child(even) {
     border-left: var(--line);
+}
+
+.home .project-card:nth-child(n+3) {
+    border-top: var(--line);
 }
 
 /* hover: the cell lights up white (like the nav boxes) while the content shrinks */
@@ -219,12 +224,13 @@
     clip-path: inset(0 0 100% 0);
 }
 
-/* optional second image that fades in over the first on hover */
+/* optional second image (or video) that fades in over the first on hover */
 .home .project-media {
     position: relative;
 }
 
-.home .project-card img.project-hover-img {
+.home .project-card .project-hover-img {
+    display: block;
     position: absolute;
     inset: 0;
     width: 100%;
@@ -234,8 +240,8 @@
     transition: opacity 0.35s ease-in-out;
 }
 
-.home .project-card:hover img.project-hover-img,
-.home .project-card:focus-visible img.project-hover-img {
+.home .project-card:hover .project-hover-img,
+.home .project-card:focus-visible .project-hover-img {
     opacity: 1;
 }
 

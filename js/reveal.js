@@ -24,6 +24,23 @@ if (!reduceMotion && projectCards.length) {
     });
 }
 
+// Hover videos only play while the card is hovered, and start from the beginning each time
+projectCards.forEach(card => {
+    const video = card.querySelector('video.project-hover-img');
+    if (!video) return;
+
+    const play = () => {
+        video.currentTime = 0;
+        video.play().catch(() => {});
+    };
+    const stop = () => video.pause();
+
+    card.addEventListener('mouseenter', play);
+    card.addEventListener('focus', play);
+    card.addEventListener('mouseleave', stop);
+    card.addEventListener('blur', stop);
+});
+
 // Horizontal lines draw in from left to right the first time they scroll into view
 let waitingLines = Array.from(document.querySelectorAll('[data-line]'));
 
