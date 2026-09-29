@@ -6,16 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sol | Aiden Nguyen</title>
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/project.css">
 </head>
 
-<body class="sol-body">
+<body class="home project" id="top">
 
     <header class="site-header">
         <nav class="nav">
-            <a href="index.html" class="nav-brand">Aiden Nguyen</a>
+            <a href="/" class="nav-brand"><span class="nav-text">Aiden Nguyen</span></a>
+
             <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"
                 aria-controls="navLinks">
                 <span class="nav-toggle-bar"></span>
@@ -24,150 +27,197 @@
             </button>
 
             <ul class="nav-links" id="navLinks">
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="index.html#projects">Projects</a></li>
-                <li><a href="index.html#contact" class="nav-contact">Contact</a></li>
+                <li><a href="/about"><span class="nav-text">About</span></a></li>
+                <li><a href="/#projects"><span class="nav-text">Work</span></a></li>
+                <li><a href="#contact" class="nav-contact"><span class="nav-text">Contact</span></a></li>
             </ul>
         </nav>
     </header>
 
-
-    <div class="project-hero-sol">
-        <div class="screen-row">
-            <img src="img/sol-screen1.png" alt="Sol app — mind visualization with engagement readings">
-            <img src="img/sol-screen2.png" alt="Sol app — emotional intensity weekly analytics">
-            <img src="img/sol-screen3.png" alt="Sol app — intellectual engagement weekly analytics">
-            <img src="img/sol-screen4.png" alt="Sol app — insights and summary screen">
-        </div>
-    </div>
-
     <main>
 
-        <section class="project-intro">
+        <!-- title on the left, project details stacked in cells on the right -->
+        <section class="case-hero" data-line="bottom">
+            <h1 class="hero-title big-title case-title">
+                <span class="title-line case-kicker title-thin">Experimental health app</span>
+                <span class="title-line case-name title-heavy title-fade">Sol</span>
+            </h1>
 
-            <div class="project-summary">
-                <h1 class="project-title"><span class="accent-sol">Sol</span> · The Experimental Health App</h1>
-                <p class="project-subtitle">Developing a visual representation of the mind and its decisions,
-                    making cognitive self-awareness measurable.</p>
-                <p class="project-lead">This was a three-day designathon hosted by Figma, where each team
-                    of three was expected to develop a tool that tracks, measures, visualizes, or quantifies
-                    an aspect of the human sensory experience. Teams were encouraged to design beyond what is
-                    technologically possible, imagining what future trackers may look like.</p>
-            </div>
-
-            <div class="project-details">
-                <div class="detail-block">
-                    <h2>Role</h2>
-                    <p>UX Researcher</p>
-                    <p>Visual Designer</p>
-                    <p>Interaction Designer</p>
+            <dl class="case-details">
+                <div class="case-detail">
+                    <dt>Event</dt>
+                    <dd>Figbuild 2026</dd>
                 </div>
-                <div class="detail-block">
-                    <h2>Timeline</h2>
-                    <p>72 Hours // Spring 2026</p>
+                <div class="case-detail">
+                    <dt>Role</dt>
+                    <dd>UX Researcher</dd>
+                    <dd>Visual Designer</dd>
+                    <dd>Interaction Designer</dd>
                 </div>
-                <div class="detail-block">
-                    <h2>Tools</h2>
-                    <p>Figma</p>
-                    <p>Photoshop</p>
+                <div class="case-detail">
+                    <dt>Timeline</dt>
+                    <dd>72 hours, Spring 2026</dd>
                 </div>
-            </div>
-
+                <div class="case-detail">
+                    <dt>Tools</dt>
+                    <dd>Figma</dd>
+                    <dd>Photoshop</dd>
+                </div>
+            </dl>
         </section>
 
-        <div class="case-study">
+        <!-- one-line pitch on the left, the brief on the right -->
+        <section class="case-row" data-line="bottom">
+            <div class="case-text">
+                <p class="case-lead">Developing a visual representation of the mind and its decisions, making
+                    cognitive self-awareness measurable.</p>
+            </div>
+            <div class="case-aside case-text">
+                <p>This was a three-day designathon hosted by Figma, where each team of three was expected to develop
+                    a tool that tracks, measures, visualizes, or quantifies an aspect of the human sensory experience.
+                    Teams were encouraged to design beyond what is technologically possible, imagining what future
+                    trackers may look like.</p>
+            </div>
+        </section>
 
-            <section class="case-section">
-                <p class="case-eyebrow">The Concept</p>
+        <figure class="case-media" data-line="bottom">
+            <img src="img/sol-hover.jpg" alt="Two phones showing the Sol home screen and weekly analytics">
+        </figure>
 
-                <div class="concept-row">
-                    <div class="concept-description">
-                        <h2 class="case-headline">Giving shape to the way you think and feel:</h2>
-                        <p class="case-body">Our team was inspired by the growing concern surrounding the rise of
-                            artificial intelligence. While AI tools have increased efficiency and access to information,
-                            they've left a gap in people's abilities to engage their minds critically. We wanted to
-                            solve
-                            how someone could be more mentally active in their thinking. Our app helps people become
-                            more
-                            aware of their critical thinking skills while understanding themselves emotionally,
-                            highlighting
-                            whether users are thinking with their head or feeling with their heart.</p>
-                    </div>
-                    <div class="concept-icons">
-                        <img src="img/sol-app2.png" alt="Sol app icon — dark">
-                        <img src="img/sol-app1.png" alt="Sol app icon — gradient">
-                    </div>
+        <!-- the concept -->
+        <section class="case-section" data-line="bottom">
+            <h2 class="section-title">The Concept</h2>
+
+            <div class="case-row" data-line="top">
+                <div class="case-text">
+                    <h3 class="case-headline">Giving shape to the way you think and feel</h3>
+                    <p>Our team was inspired by the growing concern surrounding the rise of artificial intelligence.
+                        While AI tools have increased efficiency and access to information, they've left a gap in
+                        people's abilities to engage their minds critically. We wanted to solve how someone could be
+                        more mentally active in their thinking. Our app helps people become more aware of their
+                        critical thinking skills while understanding themselves emotionally, highlighting whether users
+                        are thinking with their head or feeling with their heart.</p>
                 </div>
-
-                <img class="case-image" src="img/sol-description.png" alt="Sol app gradient orb visualization">
-
-                <h2 class="case-subhead">My Role</h2>
-                <p class="case-body">My contributions consist of ideation, cognitive research, and overall
-                    product design. We began by narrowing our scope, guided by extensive research across many
-                    concepts. Our goal was to communicate a sensory type that wasn't widely understood but
-                    resonated with all of us. Only then did we design how the tool could work, prioritising
-                    being informative over visual polish.</p>
-            </section>
-
-            <section class="case-section">
-                <p class="case-eyebrow">Problem</p>
-
-                <div class="problem-row">
-                    <div class="problem-text">
-                        <h2 class="case-headline">Designing for others, not ourselves:</h2>
-                        <p class="case-body">An early challenge was reconciling each member's conflicting views on which
-                            sensory type to focus on. This decision formed the backbone of our project, and as we
-                            researched
-                            key systems, we naturally gravitated toward some concepts over others. A part of being a
-                            good
-                            designer is working selflessly, understanding who the demographic might be and their needs.
-                            So
-                            despite the pull toward ideas we personally favoured, our team aligned around cognitive
-                            engagement,
-                            because it resonated most strongly with young people.</p>
-                    </div>
-
-                    <img src="img/sol-earlyconcept.png" alt="Early app concept ideas">
+                <div class="case-aside case-icons">
+                    <img src="img/sol-app2.png" alt="Sol app icon on black">
+                    <img src="img/sol-app1.png" alt="Sol app icon on a purple and orange gradient">
                 </div>
-            </section>
+            </div>
 
-            <section class="case-section">
-                <p class="case-eyebrow">Reflection</p>
-                <h2>End Result</h2>
-                <p>This project is an outline of technical performance and creative values centered around people
-                    and their wellbeing. My goal is to build sustainable practices that benefit society.</p>
-            </section>
+            <figure class="case-media" data-line="top">
+                <img src="img/sol/app-flow.jpg" alt="UX and app flow: the homepage, calendar and insights screens"
+                    loading="lazy">
+            </figure>
 
-        </div>
+            <div class="case-screens" data-line="top">
+                <img src="img/sol-screen1.png" alt="Sol home screen: the mind visualization with engagement readings"
+                    loading="lazy">
+                <img src="img/sol-screen2.png" alt="Sol calendar: emotional intensity over the week" loading="lazy">
+                <img src="img/sol-screen3.png" alt="Sol calendar: intellectual engagement over the week"
+                    loading="lazy">
+                <img src="img/sol-screen4.png" alt="Sol insights and summary screen" loading="lazy">
+            </div>
+        </section>
 
-        <div class="project-nav-footer">
-            <a href="index.html#projects" class="back-link">Back to Projects</a>
-            <a href="meal4me.html" class="next-link">Next: Meal4Me</a>
-        </div>
+        <!-- my role -->
+        <section class="case-section" data-line="bottom">
+            <h2 class="section-title">My Role</h2>
+
+            <div class="case-row" data-line="top">
+                <div class="case-text">
+                    <h3 class="case-headline">Research first, polish second</h3>
+                    <p>My contributions consist of ideation, cognitive research, and overall product design. We began
+                        by narrowing our scope, guided by extensive research across many concepts. Our goal was to
+                        communicate a sensory type that wasn't widely understood but resonated with all of us. Only
+                        then did we design how the tool could work, prioritising being informative over visual
+                        polish.</p>
+                </div>
+                <div class="case-aside"></div>
+            </div>
+
+            <figure class="case-media" data-line="top">
+                <img src="img/sol/information-management.jpg"
+                    alt="Information management: the Sol earbuds alongside the principles behind the data"
+                    loading="lazy">
+            </figure>
+        </section>
+
+        <!-- problem -->
+        <section class="case-section" data-line="bottom">
+            <h2 class="section-title">Problem</h2>
+
+            <div class="case-row" data-line="top">
+                <div class="case-text">
+                    <h3 class="case-headline">Designing for others, not ourselves</h3>
+                    <p>An early challenge was reconciling each member's conflicting views on which sensory type to
+                        focus on. This decision formed the backbone of our project, and as we researched key systems,
+                        we naturally gravitated toward some concepts over others. A part of being a good designer is
+                        working selflessly, understanding who the demographic might be and their needs. So despite the
+                        pull toward ideas we personally favoured, our team aligned around cognitive engagement, because
+                        it resonated most strongly with young people.</p>
+                </div>
+                <figure class="case-aside case-aside-media">
+                    <img src="img/sol/early-concept.jpg" alt="Early wireframes and concept sketches for Sol"
+                        loading="lazy">
+                </figure>
+            </div>
+        </section>
+
+        <!-- reflection -->
+        <section class="case-section" data-line="bottom">
+            <h2 class="section-title">Reflection</h2>
+
+            <div class="case-row" data-line="top">
+                <div class="case-text">
+                    <h3 class="case-headline">End result</h3>
+                    <p>This project is an outline of technical performance and creative values centered around people
+                        and their wellbeing. My goal is to build sustainable practices that benefit society.</p>
+                </div>
+                <div class="case-aside"></div>
+            </div>
+        </section>
+
+        <!-- back to the list, or on to the next project -->
+        <nav class="case-nav" aria-label="More projects" data-line="bottom">
+            <a href="/#projects" class="case-nav-back"><span class="nav-text">Back to projects</span></a>
+            <a href="/meal4me" class="case-nav-next">
+                <span class="case-nav-label">Next project</span>
+                <span class="case-nav-name">Meal4Me</span>
+            </a>
+        </nav>
 
     </main>
 
     <footer class="site-footer" id="contact">
-        <p class="footer-eyebrow">Have a Project in Mind?</p>
-        <h2 class="footer-title">Let's Connect</h2>
+        <h2 class="footer-title big-title" data-line="bottom">
+            <span class="title-line footer-question title-thin">Have a project in mind?</span>
+            <span class="title-line footer-connect title-fade"><span class="title-heavy">Let’s</span> <span class="title-italic">Connect</span></span>
+        </h2>
 
-        <div class="footer-cols">
-            <div class="footer-col">
+        <div class="footer-bottom">
+            <div class="footer-group">
                 <h3>Contact</h3>
-                <a href="tel:6047040245" aria-label="Phone">Phone</a>
-                <a href="mailto:aiden_nguyen@sfu.ca" aria-label="Email">Email</a>
+                <a href="tel:6047040245">Phone</a>
+                <a href="mailto:aiden_nguyen@sfu.ca">Email</a>
             </div>
-            <div class="footer-col">
+            <div class="footer-group">
                 <h3>Social</h3>
-                <a href="https://www.instagram.com/aiden.nguyyen/" aria-label="Instagram">Instagram</a>
-                <a href="https://www.linkedin.com/in/aiden-nguyen-424a89329" aria-label="LinkedIn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/aiden-nguyen-424a89329">LinkedIn</a>
+                <a href="https://www.instagram.com/aiden.nguyyen/">Instagram</a>
             </div>
-            <div class="footer-col">
+            <div class="footer-group">
                 <h3>Resume</h3>
-                <a href="resume/AidenNguyen_Resume.pdf" download>Download Resume</a>
+                <a href="resume/AidenNguyen_Resume.pdf" download>Download PDF</a>
+            </div>
+            <div class="footer-group">
+                <p>Aiden Nguyen 2026</p>
+                <a href="#top">Back to top</a>
             </div>
         </div>
     </footer>
+    <script src="js/hero.js"></script>
+    <script src="js/reveal.js"></script>
+    <script src="js/cursor.js"></script>
     <script src="js/nav.js"></script>
 </body>
 

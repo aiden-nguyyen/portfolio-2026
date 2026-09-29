@@ -1,5 +1,5 @@
-// Replaces the mouse pointer with a grey circle that springs after the mouse,
-// stays visible over links and grows + darkens on click (inspired by the iPad pointer)
+// Replaces the mouse pointer with a circle that inverts the colours under it (see main.css),
+// springs after the mouse, stays visible over links and grows on click (inspired by the iPad pointer)
 // Only runs with a real mouse, touch screens keep their normal behaviour
 if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     const cursor = document.createElement('div');
@@ -73,7 +73,7 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
         cursor.classList.remove('is-visible');
     });
 
-    // grow and darken while the mouse button is held down
+    // grow while the mouse button is held down
     document.addEventListener('mousedown', () => cursor.classList.add('is-down'));
     document.addEventListener('mouseup', () => cursor.classList.remove('is-down'));
 }

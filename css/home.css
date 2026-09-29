@@ -315,32 +315,45 @@
     letter-spacing: -0.045em;
 }
 
-/* one line: contact, social, resume split the left half evenly (a sixth each),
-   the credit sits at 80% across; label in black, links in grey */
+/* one line: contact, social, resume sit together on the left with the same
+   gap between each group, the credit sits on the right; labels in black, links in grey */
 .home .footer-bottom {
-    display: grid;
-    grid-template-columns: repeat(3, calc(100% / 6)) 30% 20%;
+    display: flex;
     align-items: baseline;
+    gap: 4rem;
     padding: 0.7rem 10px 0;
 }
 
+/* inside a group the label and its links stay close together */
 .home .footer-group {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
     gap: 0.3rem 0.75rem;
-    /* keeps the links clear of the next group's label */
-    padding-right: 2rem;
-}
-
-/* the label pushes its links to the far end of the column,
-   so the space sits between the label and its links */
-.home .footer-group > :first-child {
-    margin-right: auto;
+    /* each group stays on one line */
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .home .footer-group:last-child {
-    grid-column: 5;
+    margin-left: auto;
+}
+
+/* too narrow for one row: back to a grid of groups, label then its links */
+@media (max-width: 64rem) {
+    .home .footer-bottom {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 1rem;
+    }
+
+    .home .footer-group {
+        padding-right: 2rem;
+    }
+
+    .home .footer-group:last-child {
+        margin-left: 0;
+    }
 }
 
 .home .footer-group h3 {
@@ -367,6 +380,9 @@
 
 .home .footer-group a:hover {
     color: var(--ink);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
 }
 
 /* ---------- horizontal lines draw in left to right (js/reveal.js) ---------- */
@@ -412,15 +428,6 @@
         border-top: var(--line);
     }
 
-    .home .footer-bottom {
-        grid-template-columns: 1fr 1fr;
-        row-gap: 1rem;
-    }
-
-    .home .footer-group:last-child {
-        grid-column: auto;
-    }
-
 }
 
 /* ---------- phone: hamburger menu ---------- */
@@ -456,8 +463,11 @@
         border-top: none;
     }
 
+    /* title sits at the top under the nav instead of filling the screen */
     .home .hero {
-        min-height: 70vh;
+        min-height: 0;
+        justify-content: flex-start;
+        padding: 1.5rem 0 1.25rem;
     }
 
     .home .section-title {

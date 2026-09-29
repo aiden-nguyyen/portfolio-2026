@@ -1,0 +1,303 @@
+/* project case study pages: builds on home.css (nav, footer, grid lines, titles),
+   loaded after it on the project pages only, everything scoped to body.project */
+
+.project {
+    --case-pad: 2.8vw;
+}
+
+/* ---------- hero: big title on the left, details stacked in cells on the right ---------- */
+.project .case-hero {
+    display: grid;
+    /* same split as the nav, so the details line up under the nav links */
+    grid-template-columns: var(--split) 1fr;
+}
+
+.project .case-title {
+    font-size: 1rem;
+    line-height: 0.8;
+    padding: 2.4vw 0 1.2vw;
+}
+
+/* the kicker stays lowercase, only the project name is in caps */
+.project .case-kicker {
+    font-size: 4.4vw;
+    letter-spacing: -0.05em;
+    text-transform: lowercase;
+    padding-left: var(--case-pad);
+}
+
+.project .case-name {
+    font-size: 23.6vw;
+    letter-spacing: -0.02em;
+    margin-top: 1.4vw;
+    padding-left: 0.6vw;
+}
+
+/* details sit at the bottom of their column, one cell per detail */
+.project .case-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 0;
+    border-left: var(--line);
+}
+
+.project .case-detail {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.3rem 0.75rem;
+    padding: 0.7rem 10px;
+    border-top: var(--line);
+    text-transform: lowercase;
+}
+
+/* the label takes the left third so the values line up in a column */
+.project .case-detail dt {
+    flex: 0 0 30%;
+    color: var(--ink);
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+.project .case-detail dd {
+    margin: 0;
+    color: var(--muted);
+    font-size: var(--ui-text);
+    line-height: 1.1;
+}
+
+/* sections are split by the drawn grid lines instead (clears the old main.css styles) */
+.project .case-section {
+    padding: 0;
+    border-top: none;
+}
+
+/* ---------- rows: text on the left, an image or empty cell on the right ---------- */
+.project .case-row {
+    display: grid;
+    grid-template-columns: var(--split) 1fr;
+}
+
+.project .case-text {
+    padding: 2.6vw var(--case-pad) 5vw;
+}
+
+.project .case-text p {
+    max-width: 44rem;
+    margin: 0 0 1.4em;
+    font-size: var(--ui-text);
+    line-height: 1.25;
+    letter-spacing: -0.03em;
+}
+
+.project .case-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* the one-line pitch under the hero */
+.project .case-text .case-lead {
+    max-width: none;
+    font-size: 3vw;
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+}
+
+.project .case-headline {
+    margin: 0 0 1.6rem;
+    font-size: 3vw;
+    font-weight: 400;
+    line-height: 1.02;
+    letter-spacing: -0.045em;
+}
+
+.project .case-aside {
+    margin: 0;
+    border-left: var(--line);
+}
+
+/* an image in the right-hand cell, inset like the gallery */
+.project .case-aside-media {
+    padding: 0.5rem;
+}
+
+.project .case-aside-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* the two app icons side by side, pinned to the bottom of the cell */
+.project .case-icons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: end;
+    gap: 0.5rem;
+    padding: 0.5rem;
+}
+
+.project .case-icons img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* ---------- full-width images and the phone screens ---------- */
+.project .case-media {
+    margin: 0;
+    padding: 0.5rem;
+}
+
+.project .case-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.project .case-screens {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    padding: 2.6vw 0.5rem;
+}
+
+.project .case-screens img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* ---------- back to projects / next project ---------- */
+.project .case-nav {
+    display: grid;
+    grid-template-columns: var(--split) 1fr;
+    text-transform: lowercase;
+}
+
+.project .case-nav a {
+    display: flex;
+    color: var(--ink);
+    text-decoration: none;
+    background-color: var(--page);
+    transition: background-color 0.25s ease-in-out;
+}
+
+/* hover: the cell lights up white, like the nav and project cards */
+.project .case-nav a:hover,
+.project .case-nav a:focus-visible {
+    background-color: #ffffff;
+}
+
+.project .case-nav-back {
+    align-items: flex-end;
+    padding: 0 10px 0.7rem;
+    font-size: 1.4rem;
+}
+
+.project .case-nav-back:hover .nav-text {
+    transform: scale(0.95);
+}
+
+.project .case-nav-next {
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 0.6rem;
+    padding: 4vw 10px 0.9rem;
+    border-left: var(--line);
+}
+
+.project .case-nav-label {
+    color: var(--muted);
+    font-size: var(--ui-text);
+}
+
+/* the next project's name in the big heavy type, shrinking a touch on hover */
+.project .case-nav-name {
+    font-family: "HelveticaNeue-HeavyCond", "Helvetica Neue", sans-serif;
+    font-weight: 800;
+    font-size: 7vw;
+    line-height: 0.8;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    transform-origin: left bottom;
+    transition: transform 0.4s var(--spring);
+}
+
+.project .case-nav-next:hover .case-nav-name,
+.project .case-nav-next:focus-visible .case-nav-name {
+    transform: scale(0.97);
+}
+
+/* ---------- tablet: everything stacks into one column ---------- */
+@media (max-width: 55rem) {
+    .project .case-hero,
+    .project .case-row,
+    .project .case-nav {
+        grid-template-columns: 1fr;
+    }
+
+    .project .case-kicker {
+        font-size: 7vw;
+    }
+
+    .project .case-name {
+        font-size: 39vw;
+    }
+
+    .project .case-details,
+    .project .case-aside,
+    .project .case-nav-next {
+        border-left: none;
+    }
+
+    /* empty right-hand cells have nothing to show once stacked */
+    .project .case-aside:empty {
+        display: none;
+    }
+
+    .project .case-aside:not(:empty) {
+        border-top: var(--line);
+    }
+
+    /* icons stay a sensible size while the cell (and its line) spans the full width */
+    .project .case-icons {
+        grid-template-columns: repeat(2, minmax(0, 12rem));
+    }
+
+    .project .case-nav-back {
+        padding-top: 1.5rem;
+    }
+
+    .project .case-nav-next {
+        border-top: var(--line);
+    }
+
+    .project .case-text .case-lead,
+    .project .case-headline {
+        font-size: 6vw;
+    }
+
+    .project .case-screens {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ---------- phone ---------- */
+@media (max-width: 35rem) {
+    .project {
+        --case-pad: 1rem;
+    }
+
+    .project .case-text {
+        padding: 1.5rem var(--case-pad) 2.5rem;
+    }
+
+    .project .case-text .case-lead,
+    .project .case-headline {
+        font-size: 1.9rem;
+    }
+
+    .project .case-nav-name {
+        font-size: 16vw;
+    }
+}

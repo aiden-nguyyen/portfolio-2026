@@ -770,6 +770,8 @@ h1 {
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
+    /* inverts whatever is underneath: dark on the light page, light over images and black text */
+    mix-blend-mode: difference;
 }
 
 .cursor.is-visible {
@@ -783,14 +785,15 @@ h1 {
     height: 1.25rem;
     margin: -0.625rem 0 0 -0.625rem;
     border-radius: 50%;
-    background-color: rgba(90, 90, 90, 0.65);
+    /* white + difference blend (above) = the opposite of the colour behind it */
+    background-color: #ffffff;
     /* the size curve overshoots past 1 then settles, giving the springy bounce */
-    transition: transform 0.45s var(--spring), background-color 0.25s ease-in-out, opacity 0.3s ease-in-out;
+    transition: transform 0.45s var(--spring), opacity 0.3s ease-in-out;
 }
 
+/* grows while the mouse button is held down */
 .cursor.is-down .cursor-dot {
     transform: scale(1.4);
-    background-color: rgba(60, 60, 60, 0.6);
 }
 
 @media (prefers-reduced-motion: reduce) {
