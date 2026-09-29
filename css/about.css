@@ -1,0 +1,126 @@
+/* about page: builds on home.css (nav, footer, grid lines, titles),
+   loaded after it on about.html only, everything scoped to body.about */
+
+/* ---------- intro: name + bio on the left, portrait on the right ---------- */
+.about .about-hero {
+    display: grid;
+    /* same split as the nav, so the portrait lines up under the nav links */
+    grid-template-columns: var(--split) 1fr;
+}
+
+.about .about-hero-text {
+    padding-bottom: 8vw;
+}
+
+.about .about-title {
+    font-size: 1rem;
+    line-height: 0.8;
+    padding: 2.4vw 0 0.6vw;
+}
+
+/* "hey, i'm" stays lowercase, only the name is in caps */
+.about .about-hello {
+    font-size: 6.6vw;
+    letter-spacing: -0.05em;
+    text-transform: lowercase;
+    padding-left: 2.8vw;
+}
+
+/* sized in vw so the name fills the left column at any screen size */
+.about .about-name {
+    font-size: 23.6vw;
+    letter-spacing: -0.02em;
+    margin-top: 0.8vw;
+    padding-left: 0.6vw;
+}
+
+.about .about-bio {
+    max-width: 52rem;
+    padding: 4.4vw 2.8vw 0;
+}
+
+.about .about-bio p {
+    margin: 0 0 1.4em;
+    font-size: var(--ui-text);
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+}
+
+.about .about-bio p:last-child {
+    margin-bottom: 0;
+}
+
+/* the portrait sits at the bottom of its column, flush with the line below */
+.about .about-portrait {
+    display: flex;
+    align-items: flex-end;
+    border-left: var(--line);
+}
+
+.about .about-portrait img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* ---------- gallery: three columns, each image keeps its own shape ---------- */
+.about .gallery {
+    scroll-margin-top: var(--nav-height);
+}
+
+.about .gallery-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+    gap: 1.5vw;
+    padding: 2.6vw 0.5rem 5vw;
+}
+
+.about .gallery-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+}
+
+.about .gallery-col img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* ---------- tablet: bio under the name, portrait full width below ---------- */
+@media (max-width: 55rem) {
+    .about .about-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .about .about-hello {
+        font-size: 11vw;
+    }
+
+    .about .about-name {
+        font-size: 39vw;
+    }
+
+    .about .about-portrait {
+        border-left: none;
+    }
+}
+
+/* ---------- phone: gallery becomes a single column ---------- */
+@media (max-width: 35rem) {
+    .about .gallery-columns {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        padding: 1rem 0.5rem 3rem;
+    }
+
+    /* the column wrappers drop away so every image stacks in one list */
+    .about .gallery-col {
+        display: contents;
+    }
+
+    .about .about-bio {
+        padding: 2rem 1rem 0;
+    }
+}

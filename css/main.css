@@ -788,15 +788,7 @@ h1 {
     transition: transform 0.45s var(--spring), background-color 0.25s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-/* consumed: shrinks and fades away where it is over a link or button,
-   eases in here, then springs back out using the transition above when leaving */
-.cursor.is-hover .cursor-dot {
-    transform: scale(0);
-    opacity: 0;
-    transition: transform 0.3s ease-in-out, background-color 0.25s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-.cursor.is-down:not(.is-hover) .cursor-dot {
+.cursor.is-down .cursor-dot {
     transform: scale(1.4);
     background-color: rgba(60, 60, 60, 0.6);
 }

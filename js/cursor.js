@@ -1,5 +1,5 @@
 // Replaces the mouse pointer with a grey circle that springs after the mouse,
-// grows over links and grows + darkens on click (inspired by the iPad pointer)
+// stays visible over links and grows + darkens on click (inspired by the iPad pointer)
 // Only runs with a real mouse, touch screens keep their normal behaviour
 if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     const cursor = document.createElement('div');
@@ -71,11 +71,6 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     // hide when the mouse leaves the window
     document.documentElement.addEventListener('mouseleave', () => {
         cursor.classList.remove('is-visible');
-    });
-
-    // get consumed by anything clickable (shrinks away where it is), pop back out when leaving
-    document.addEventListener('mouseover', event => {
-        cursor.classList.toggle('is-hover', event.target.closest('a, button') !== null);
     });
 
     // grow and darken while the mouse button is held down
