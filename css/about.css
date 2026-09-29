@@ -57,10 +57,31 @@
     border-left: var(--line);
 }
 
+.about .about-portrait-media {
+    position: relative;
+    width: 100%;
+}
+
 .about .about-portrait img {
     display: block;
     width: 100%;
     height: auto;
+}
+
+/* hover: a second photo fades in over the first, same as the project cards */
+.about .about-portrait .about-portrait-hover {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    /* the photo is taller than the portrait, so trim the sky off the top instead of squashing it */
+    object-fit: cover;
+    object-position: center bottom;
+    opacity: 0;
+    transition: opacity 0.35s ease-in-out;
+}
+
+.about .about-portrait-media:hover .about-portrait-hover {
+    opacity: 1;
 }
 
 /* ---------- gallery: three columns, each image keeps its own shape ---------- */
@@ -72,20 +93,148 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: start;
-    gap: 1.5vw;
-    padding: 2.6vw 0.5rem 5vw;
+    /* gaps match the margin around the edge, so the images read as one wall */
+    --gallery-gap: 0.5rem;
+    gap: var(--gallery-gap);
+    padding: var(--gallery-gap);
 }
 
 .about .gallery-col {
     display: flex;
     flex-direction: column;
-    gap: 1.5vw;
+    gap: var(--gallery-gap);
+}
+
+/* each image is a button that opens the lightbox (js/gallery.js) */
+.about .gallery-item {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    transition: transform 0.4s var(--spring);
+}
+
+/* hover: shrinks like the project cards, just much less */
+.about .gallery-item:hover,
+.about .gallery-item:focus-visible {
+    transform: scale(0.985);
+}
+
+.about .gallery-item:focus-visible {
+    outline: 1px solid var(--ink);
+    outline-offset: 4px;
 }
 
 .about .gallery-col img {
     display: block;
     width: 100%;
     height: auto;
+}
+
+/* ---------- lightbox: clicked image centred over a darkened page ---------- */
+/* no scrolling the page behind it while it's open */
+html:has(.lightbox[open]) {
+    overflow: hidden;
+}
+
+.about .lightbox {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 4vh 4vw;
+    border: none;
+    background-color: rgba(18, 18, 18, 0.85);
+    /* the dialog takes focus when it opens, no need for a ring around the whole screen */
+    outline: none;
+}
+
+.about .lightbox::backdrop {
+    background: transparent;
+}
+
+.about .lightbox[open] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: lightbox-fade 0.3s ease-in-out both;
+}
+
+.about .lightbox img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    animation: lightbox-grow 0.3s var(--spring) both;
+}
+
+/* wide images: smaller than full width so they sit more like the tall ones */
+.about .lightbox.is-landscape img {
+    max-width: min(100%, 62vw);
+}
+
+/* closing: fades out and shrinks back down (js waits for this before closing) */
+.about .lightbox.is-closing {
+    animation: lightbox-fade-out 0.25s ease-in-out both;
+}
+
+.about .lightbox.is-closing img {
+    animation: lightbox-shrink 0.25s ease-in-out both;
+}
+
+@keyframes lightbox-fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes lightbox-grow {
+    from {
+        transform: scale(0.94);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes lightbox-fade-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes lightbox-shrink {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(0.94);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .about .gallery-item {
+        transition: none;
+    }
+
+    .about .lightbox[open],
+    .about .lightbox img {
+        animation: none;
+    }
 }
 
 /* ---------- tablet: bio under the name, portrait full width below ---------- */
@@ -111,8 +260,11 @@
 @media (max-width: 35rem) {
     .about .gallery-columns {
         grid-template-columns: 1fr;
-        gap: 0.75rem;
-        padding: 1rem 0.5rem 3rem;
+    }
+
+    /* the screen is already narrow, so wide photos can use the full width */
+    .about .lightbox.is-landscape img {
+        max-width: 100%;
     }
 
     /* the column wrappers drop away so every image stacks in one list */

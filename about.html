@@ -42,7 +42,7 @@
             <div class="about-hero-text">
                 <h1 class="hero-title big-title about-title" data-line="bottom">
                     <span class="title-line about-hello title-thin">hey, i’m</span>
-                    <span class="title-line about-name title-heavy">Aiden</span>
+                    <span class="title-line about-name title-heavy title-fade">Aiden</span>
                 </h1>
 
                 <div class="about-bio">
@@ -61,7 +61,10 @@
             </div>
 
             <div class="about-portrait">
-                <img src="img/aiden-about.jpg" alt="Aiden standing on a dirt path through a field, mountains behind">
+                <div class="about-portrait-media">
+                    <img src="img/aiden-about.jpg" alt="Aiden standing on a dirt path through a field, mountains behind">
+                    <img src="img/aiden-about-hover.jpg" alt="" class="about-portrait-hover" aria-hidden="true">
+                </div>
             </div>
 
         </section>
@@ -72,27 +75,52 @@
 
             <div class="gallery-columns" data-line="top">
                 <div class="gallery-col">
-                    <img src="img/gallery/late-night-work.jpg" alt="Working on a laptop late at night with a friend"
-                        loading="lazy">
-                    <img src="img/gallery/fuorisalone-poster.jpg" alt="FuoriSalone poster in blue with a ferris wheel"
-                        loading="lazy">
-                    <img src="img/gallery/totem-scene.jpg" alt="Illustrated scene of totem poles in a forest"
-                        loading="lazy">
+                    <button class="gallery-item" type="button">
+                        <img src="img/gallery/late-night-work.jpg" alt="Working on a laptop late at night with a friend"
+                            loading="lazy">
+                    </button>
+                    <button class="gallery-item" type="button">
+                        <img src="img/gallery/fuorisalone-poster.jpg"
+                            alt="FuoriSalone poster in blue with a ferris wheel" loading="lazy">
+                    </button>
+                    <button class="gallery-item" type="button">
+                        <img src="img/gallery/beach-group.jpg" alt="A group of friends posing on a rocky beach"
+                            loading="lazy">
+                    </button>
                 </div>
                 <div class="gallery-col">
-                    <img src="img/gallery/planet-of-the-future.jpg" alt="The Planet of the Future poster"
-                        loading="lazy">
-                    <img src="img/gallery/running-club.jpg" alt="VPD Youth Running Club logo" loading="lazy">
+                    <button class="gallery-item" type="button">
+                        <img src="img/gallery/planet-of-the-future.jpg" alt="The Planet of the Future poster"
+                            loading="lazy">
+                    </button>
+                    <button class="gallery-item" type="button">
+                        <img src="img/gallery/totem-scene.jpg" alt="Illustrated scene of totem poles in a forest"
+                            loading="lazy">
+                    </button>
+                    <button class="gallery-item" type="button">
+                        <img src="img/gallery/running-club.jpg" alt="VPD Youth Running Club logo" loading="lazy">
+                    </button>
                 </div>
                 <div class="gallery-col">
-                    <img src="img/gallery/friends-night-market.jpg" alt="Friends posing together at a night market"
-                        loading="lazy">
-                    <img src="img/gallery/run-start-line.jpg" alt="Runners gathered at a race start line under red trees"
-                        loading="lazy">
-                    <img src="img/gallery/cerulean.jpg" alt="Cerulean poster" loading="lazy">
+                    <button class="gallery-item" type="button">
+                        <img src="img/gallery/friends-night-market.jpg" alt="Friends posing together at a night market"
+                            loading="lazy">
+                    </button>
+                    <button class="gallery-item" type="button">
+                        <img src="img/gallery/run-start-line.jpg"
+                            alt="Runners gathered at a race start line under red trees" loading="lazy">
+                    </button>
+                    <button class="gallery-item" type="button">
+                        <img src="img/gallery/cerulean.jpg" alt="Cerulean poster" loading="lazy">
+                    </button>
                 </div>
             </div>
         </section>
+
+        <!-- lightbox: the clicked gallery image shown large over a darkened page (js/gallery.js) -->
+        <dialog class="lightbox" aria-label="Gallery image">
+            <img alt="">
+        </dialog>
 
     </main>
 
@@ -126,6 +154,7 @@
     <script src="js/hero.js"></script>
     <script src="js/reveal.js"></script>
     <script src="js/cursor.js"></script>
+    <script src="js/gallery.js"></script>
     <script src="js/nav.js"></script>
 </body>
 
