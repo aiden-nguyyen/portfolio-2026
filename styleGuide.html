@@ -12,6 +12,7 @@
     <link href="css/main.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
 
+    <script src="js/clean-url.js"></script>
 </head>
 
 <body class="style-guide">
@@ -34,11 +35,11 @@
         </p>
         <p class="fontMedium">
             <br>Pages:
-            <a href="/">Home</a>,
-            <a href="/about">About Me</a>
-            <a href="/sol">SOL-project1</a>
-            <a href="/meal4me">Meal4Me-project2</a>
-            <a href="/citations">Meal4Me-project2</a>
+            <a href="index.html">Home</a>,
+            <a href="about.html">About Me</a>
+            <a href="sol.html">SOL-project1</a>
+            <a href="meal4me.html">Meal4Me-project2</a>
+            <a href="citations.html">Meal4Me-project2</a>
 
         </p>
 
@@ -228,16 +229,16 @@
             <code>
                 &lt;header class="site-header"&gt;<br>
                     &lt;nav class="nav"&gt;<br>
-                        &lt;a href="/" class="nav-brand"&gt;Aiden Nguyen&lt;/a&gt;<br>
+                        &lt;a href="index.html" class="nav-brand"&gt;Aiden Nguyen&lt;/a&gt;<br>
                         &lt;button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"&gt;<br>
                             &lt;span class="nav-toggle-bar"&gt;&lt;/span&gt;<br>
                             &lt;span class="nav-toggle-bar"&gt;&lt;/span&gt;<br>
                             &lt;span class="nav-toggle-bar"&gt;&lt;/span&gt;<br>
                         &lt;/button&gt;<br>
                         &lt;ul class="nav-links" id="navLinks"&gt;<br>
-                            &lt;li&gt;&lt;a href="/about"&gt;About Me&lt;/a&gt;&lt;/li&gt;<br>
-                            &lt;li&gt;&lt;a href="/#projects"&gt;Projects&lt;/a&gt;&lt;/li&gt;<br>
-                            &lt;li&gt;&lt;a href="/#contact" class="nav-contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;<br>
+                            &lt;li&gt;&lt;a href="about.html"&gt;About Me&lt;/a&gt;&lt;/li&gt;<br>
+                            &lt;li&gt;&lt;a href="index.html#projects"&gt;Projects&lt;/a&gt;&lt;/li&gt;<br>
+                            &lt;li&gt;&lt;a href="index.html#contact" class="nav-contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;<br>
                         &lt;/ul&gt;<br>
                     &lt;/nav&gt;<br>
                 &lt;/header&gt;<br>
@@ -246,7 +247,7 @@
             <h3>Rendered element:</h3>
             <header class="site-header">
                 <nav class="nav">
-                    <a href="/" class="nav-brand">Aiden Nguyen</a>
+                    <a href="index.html" class="nav-brand">Aiden Nguyen</a>
                     <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"
                         aria-controls="navLinks">
                         <span class="nav-toggle-bar"></span>
@@ -255,9 +256,9 @@
                     </button>
 
                     <ul class="nav-links" id="navLinks">
-                        <li><a href="/about">About Me</a></li>
-                        <li><a href="/#projects">Projects</a></li>
-                        <li><a href="/#contact" class="nav-contact">Contact</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="index.html#projects">Projects</a></li>
+                        <li><a href="index.html#contact" class="nav-contact">Contact</a></li>
                     </ul>
                 </nav>
             </header>
@@ -327,9 +328,9 @@
             <code>
             &lt;header class="site-header"&gt;<br>
                 &lt;nav class="nav"&gt;<br>
-                    &lt;a href="/" class="nav-brand"&gt;Aiden Nguyen&lt;/a&gt;<br>
+                    &lt;a href="index.html" class="nav-brand"&gt;Aiden Nguyen&lt;/a&gt;<br>
                     &lt;ul class="nav-links"&gt;<br>
-                        &lt;li&gt;&lt;a href="/about"&gt;About Me&lt;/a&gt;&lt;/li&gt;<br>
+                        &lt;li&gt;&lt;a href="about.html"&gt;About Me&lt;/a&gt;&lt;/li&gt;<br>
                         &lt;li&gt;&lt;a href="#projects"&gt;Projects&lt;/a&gt;&lt;/li&gt;<br>
                         &lt;li&gt;&lt;a href="#contact" class="nav-contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;<br>
                     &lt;/ul&gt;<br>
@@ -340,9 +341,9 @@
             <h3>Rendered element:</h3>
             <header class="site-header">
                 <nav class="nav">
-                    <a href="/" class="nav-brand">Aiden Nguyen</a>
+                    <a href="index.html" class="nav-brand">Aiden Nguyen</a>
                     <ul class="nav-links">
-                        <li><a href="/about">About Me</a></li>
+                        <li><a href="about.html">About Me</a></li>
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="#contact" class="nav-contact">Contact</a></li>
                     </ul>
@@ -583,8 +584,8 @@
 
     <section id="templates">
         <h2 class="element-text">Templates</h2>
-        <a href="/">Home Page (Template)</a><br>
-        <br><a href="/about">About Me Page (Template)</a>
+        <a href="index.html">Home Page (Template)</a><br>
+        <br><a href="about.html">About Me Page (Template)</a>
     </section>
 
     <script src="js/nav.js"></script>
