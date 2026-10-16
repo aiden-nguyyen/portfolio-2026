@@ -479,3 +479,9 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* project images: very slightly rounded corners (clips the hover image/video too) */
+.home .project-media {
+    overflow: hidden;
+    border-radius: 6px;
+}

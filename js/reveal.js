@@ -1,6 +1,6 @@
-// Project images slide in like a curtain, and horizontal lines draw in, the first time they scroll into view
+// Project images (and anything marked data-curtain) slide in like a curtain, and horizontal lines draw in, the first time they scroll into view
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const projectCards = document.querySelectorAll('.project-card');
+const projectCards = document.querySelectorAll('.project-card, [data-curtain]');
 
 if (!reduceMotion && projectCards.length) {
     // watch the card, not the image: a fully clipped image never counts as "in view"

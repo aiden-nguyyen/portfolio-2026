@@ -301,3 +301,606 @@
         font-size: 16vw;
     }
 }
+
+/* ---------- sol case study: the simpler wireframe layout ---------- */
+.project .sol-gutter {
+    background-color: #e8e8e8;
+}
+
+.project .sol-hero {
+    margin: 0;
+    background-color: #ffffff;
+    padding: 1.2rem 15.4% 1.4rem;
+}
+
+.project .sol-hero img,
+.project .sol-flow img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.project .sol-intro {
+    display: grid;
+    grid-template-columns: 15.4% 1fr 25% 15.4%;
+}
+
+.project .sol-intro-main {
+    box-sizing: border-box;
+    width: min(100%, 36rem);
+    justify-self: center;
+    padding: 2.4vw var(--case-pad) 3vw;
+}
+
+.project .sol-title {
+    margin: 0 0 1.6rem;
+    padding-bottom: 1.4rem;
+    border-bottom: var(--line);
+    font-size: 2.2vw;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.project .sol-name {
+    color: #F27330;
+    font-style: italic;
+    font-weight: 700;
+}
+
+.project .sol-intro-main p {
+    max-width: 30rem;
+    margin: 0;
+    font-size: var(--ui-text);
+    line-height: 1.25;
+    letter-spacing: -0.03em;
+}
+
+.project .sol-details {
+    margin: 0;
+    padding: 1.4vw 1.6vw;
+    border-left: var(--line);
+    text-transform: lowercase;
+}
+
+.project .sol-details dt {
+    margin-top: 0.6rem;
+    color: var(--muted);
+    font-size: 1.4rem;
+    line-height: 1.2;
+}
+
+.project .sol-details dd {
+    margin: 0;
+    font-size: var(--ui-text);
+    line-height: 1.3;
+}
+
+.project .sol-screens {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.6rem;
+    padding: 2.6vw 15.4%;
+    background-color: #fff;
+}
+
+.project .sol-screens img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.project .sol-block {
+    display: grid;
+    grid-template-columns: 15.4% 1fr 15.4%;
+}
+
+.project .sol-copy {
+    box-sizing: border-box;
+    width: min(100%, 44rem);
+    justify-self: center;
+    padding: 1.4rem var(--case-pad) 2.6vw;
+}
+
+.project .sol-copy h2 {
+    margin: 0 0 0.3rem;
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+.project .sol-copy p {
+    max-width: 44rem;
+    margin: 0;
+    font-size: var(--ui-text);
+    line-height: 1.25;
+    letter-spacing: -0.03em;
+}
+
+/* typeface on the left, a grid of colour swatches on the right, on white */
+.project .sol-style {
+    display: grid;
+    grid-template-columns: 54% 1fr;
+    background-color: #fff;
+}
+
+.project .sol-type {
+    padding: 1.4rem 1.6rem 2rem 15.4vw;
+}
+
+.project .sol-label {
+    display: block;
+    color: var(--muted);
+    font-size: 0.8rem;
+    letter-spacing: 0;
+}
+
+.project .sol-colour .sol-label {
+    padding: 1.4rem 1.6rem 0;
+    text-align: right;
+}
+
+.project .sol-label-icon {
+    margin-top: 1.4rem;
+}
+
+.project .sol-type p {
+    margin: 0;
+    line-height: 1.1;
+}
+
+.project .sol-tanker {
+    margin-top: 1.6rem !important;
+    font-family: "Tanker", "HelveticaNeue-HeavyCond", sans-serif;
+    font-size: 2.6vw;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+}
+
+.project .sol-satoshi-bold,
+.project .sol-satoshi {
+    font-family: "Satoshi", "Helvetica Neue", sans-serif;
+    font-size: 1.7vw;
+    letter-spacing: -0.02em;
+}
+
+.project .sol-satoshi-bold {
+    margin-top: 0.8rem !important;
+    font-weight: 700;
+}
+
+.project .sol-satoshi {
+    margin-top: 0.6rem !important;
+    font-weight: 400;
+}
+
+.project .sol-icons {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.6rem;
+}
+
+.project .sol-icons img {
+    display: block;
+    width: 4.4rem;
+    height: auto;
+}
+
+.project .sol-swatches {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    margin-top: 0.8rem;
+    border-left: var(--line);
+}
+
+.project .sol-swatches span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 5.2vw;
+    border-right: var(--line);
+    border-bottom: var(--line);
+    color: #fff;
+    font-size: 0.7rem;
+    letter-spacing: 0;
+}
+
+.project .sol-swatches .sol-empty {
+    background: transparent;
+}
+
+.project .sol-flow {
+    margin: 0;
+    padding: 1.6rem 11.5%;
+}
+
+@media (max-width: 55rem) {
+    .project .sol-intro,
+    .project .sol-block,
+    .project .sol-style {
+        grid-template-columns: 1fr;
+    }
+
+    .project .sol-gutter {
+        display: none;
+    }
+
+    .project .sol-hero,
+    .project .sol-screens,
+    .project .sol-flow {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .project .sol-title {
+        font-size: 1.8rem;
+    }
+
+    .project .sol-details {
+        border-left: none;
+        border-top: var(--line);
+        padding: 1rem;
+    }
+
+    .project .sol-type {
+        padding: 1.4rem 1rem 2rem;
+    }
+
+    .project .sol-tanker {
+        font-size: 2rem;
+    }
+
+    .project .sol-satoshi-bold,
+    .project .sol-satoshi {
+        font-size: 1.4rem;
+    }
+
+    .project .sol-swatches span {
+        min-height: 4rem;
+    }
+
+    .project .sol-screens {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* sol: a line between every band, white and grey bands alternating, and the gutter edges drawn */
+.project .sol-hero,
+.project .sol-intro,
+.project .sol-screens,
+.project .sol-block,
+.project .sol-style,
+.project .sol-flow {
+    border-bottom: var(--line);
+}
+
+.project .sol-flow {
+    background-color: #ffffff;
+}
+
+.project .sol-gutter:first-child {
+    border-right: var(--line);
+}
+
+.project .sol-gutter:last-child {
+    border-left: var(--line);
+}
+
+.project .sol-title {
+    border-bottom: var(--line);
+}
+
+.project .sol-details dt {
+    padding-top: 0.6rem;
+    border-top: var(--line);
+}
+
+.project .sol-details dt:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+/* sol intro: the rules run edge to edge so they meet the gutter and column lines */
+.project .sol-intro-main {
+    width: auto;
+    padding: 0 0 3vw;
+    --sol-inset: max(calc((100% - 36rem) / 2), var(--case-pad));
+}
+
+.project .sol-title {
+    margin: 0 0 1.6rem;
+    padding: 2.4vw var(--sol-inset) 1.4rem;
+}
+
+.project .sol-intro-main p {
+    margin: 0 var(--sol-inset);
+    max-width: none;
+}
+
+.project .sol-details {
+    padding: 0;
+}
+
+.project .sol-details dt,
+.project .sol-details dd {
+    padding-left: 1.6vw;
+    padding-right: 1.6vw;
+}
+
+.project .sol-details dt {
+    margin-top: 0;
+    padding-top: 0.7rem;
+    padding-bottom: 0.2rem;
+    border-top: var(--line);
+}
+
+.project .sol-details dt:first-child {
+    padding-top: 1.4vw;
+    border-top: none;
+}
+
+.project .sol-details dd:last-child {
+    padding-bottom: 0.9rem;
+}
+
+.project .sol-details dd:nth-last-child(1),
+.project .sol-details dd:nth-last-child(2) {
+    padding-bottom: 0.9rem;
+}
+
+/* sol typeface/colour band: swatch grid stops at the right gutter edge, mirroring the left inset */
+.project .sol-style {
+    align-items: stretch;
+}
+
+.project .sol-colour {
+    display: flex;
+    flex-direction: column;
+    padding-right: 15.4vw;
+}
+
+.project .sol-colour .sol-label {
+    padding: 1.4rem 0 0;
+    text-align: left;
+}
+
+.project .sol-swatches {
+    flex: 1;
+    margin-top: 0.8rem;
+    border-top: var(--line);
+}
+
+@media (max-width: 55rem) {
+    .project .sol-colour {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+}
+
+
+/* sol design identity: labelled rows (typeface, colour, icon) between the gutters */
+.project .sol-identity {
+    display: grid;
+    grid-template-columns: 15.4% 1fr 15.4%;
+    background-color: #ffffff;
+    border-bottom: var(--line);
+}
+
+.project .sol-id-row {
+    display: grid;
+    grid-template-columns: 22% 1fr;
+    border-bottom: var(--line);
+}
+
+.project .sol-id-row:last-child {
+    border-bottom: none;
+}
+
+.project .sol-id-label {
+    margin: 0;
+    padding: 1.4rem 1.6rem;
+    border-right: var(--line);
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+.project .sol-fonts {
+    display: flex;
+    flex-direction: column;
+}
+
+.project .sol-font {
+    display: grid;
+    grid-template-columns: 6rem 1fr;
+    align-items: baseline;
+    padding: 1.1rem 1.6rem;
+    border-bottom: var(--line);
+}
+
+.project .sol-font:last-child {
+    border-bottom: none;
+}
+
+.project .sol-font-role {
+    color: var(--muted);
+    font-size: 0.8rem;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+.project .sol-font .sol-tanker,
+.project .sol-font .sol-satoshi-bold,
+.project .sol-font .sol-satoshi {
+    margin: 0 !important;
+    line-height: 1;
+}
+
+.project .sol-font .sol-tanker { font-size: 3rem; }
+.project .sol-font .sol-satoshi-bold { font-size: 2.2rem; }
+.project .sol-font .sol-satoshi { font-size: 1.7rem; }
+
+.project .sol-palette {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.project .sol-palette li {
+    display: flex;
+    align-items: flex-end;
+    min-height: 9rem;
+    padding: 0.7rem;
+    background-color: var(--swatch);
+    color: #fff;
+    font-size: 0.75rem;
+    letter-spacing: 0;
+}
+
+.project .sol-palette li.is-light {
+    color: var(--ink);
+}
+
+.project .sol-id-row .sol-icons {
+    margin: 0;
+    padding: 1.4rem 1.6rem;
+    gap: 0.8rem;
+}
+
+.project .sol-id-row .sol-icons img {
+    width: 5.5rem;
+}
+
+@media (max-width: 55rem) {
+    .project .sol-identity,
+    .project .sol-id-row {
+        grid-template-columns: 1fr;
+    }
+
+    .project .sol-id-label {
+        border-right: none;
+        border-bottom: var(--line);
+        padding: 0.8rem 1rem;
+    }
+
+    .project .sol-font {
+        grid-template-columns: 1fr;
+        gap: 0.4rem;
+        padding: 1rem;
+    }
+
+    .project .sol-font .sol-tanker { font-size: 2.2rem; }
+    .project .sol-font .sol-satoshi-bold { font-size: 1.7rem; }
+    .project .sol-font .sol-satoshi { font-size: 1.3rem; }
+
+    .project .sol-palette {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .project .sol-palette li {
+        min-height: 6rem;
+    }
+}
+
+/* the design identity band keeps white sides */
+.project .sol-identity .sol-gutter {
+    background-color: #ffffff;
+}
+
+
+/* sol: horizontal rules are the home page's drawn-in lines (data-line), so drop the static ones */
+.project .sol-hero,
+.project .sol-intro,
+.project .sol-screens,
+.project .sol-block,
+.project .sol-style,
+.project .sol-flow,
+.project .sol-identity,
+.project .sol-title,
+.project .sol-id-row,
+.project .sol-font,
+.project .sol-details dt {
+    border-top: none;
+    border-bottom: none;
+}
+
+.project .sol-id-row:last-child [data-line]:last-child::after,
+.project .sol-id-row:last-child::after,
+.project .sol-font:last-child::after {
+    display: none;
+}
+
+
+/* hero image opens like the project cards on the home page (js/reveal.js) */
+.project .sol-hero img {
+    clip-path: inset(0 0 0 0);
+    transition: clip-path 0.9s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.project .sol-hero img.is-curtained {
+    clip-path: inset(0 0 100% 0);
+}
+
+
+/* ux & app flow: two slides you swipe (or drag) between, dots underneath */
+.project .sol-carousel {
+    position: relative;
+}
+
+.project .sol-carousel-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    cursor: grab;
+}
+
+.project .sol-carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+.project .sol-carousel-track.is-dragging {
+    scroll-snap-type: none;
+    cursor: grabbing;
+}
+
+.project .sol-carousel-track img {
+    flex: 0 0 100%;
+    width: 100%;
+    scroll-snap-align: center;
+    user-select: none;
+}
+
+.project .sol-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding-top: 1rem;
+}
+
+.project .sol-carousel-dots span {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--line-colour);
+    cursor: pointer;
+    transition: background-color 0.25s ease-in-out;
+}
+
+.project .sol-carousel-dots span.is-active {
+    background-color: var(--ink);
+}
+
+/* sol hero: the same slightly rounded corners as the home page project images */
+.project .sol-hero img {
+    border-radius: 6px;
+}
