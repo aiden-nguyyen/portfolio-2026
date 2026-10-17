@@ -811,10 +811,6 @@
     }
 }
 
-/* the design identity band keeps white sides */
-.project .sol-identity .sol-gutter {
-    background-color: #ffffff;
-}
 
 
 /* sol: horizontal rules are the home page's drawn-in lines (data-line), so drop the static ones */
@@ -903,4 +899,230 @@
 /* sol hero: the same slightly rounded corners as the home page project images */
 .project .sol-hero img {
     border-radius: 6px;
+}
+
+
+/* totem journey: green title accent, and text-beside-images rows */
+.project .sol-name.is-green {
+    color: #3f6b46;
+    font-style: normal;
+    font-family: "HelveticaNeue-HeavyCond", "Helvetica Neue", sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+}
+
+.project .sol-split {
+    display: grid;
+    grid-template-columns: 15.4% minmax(0, 2fr) minmax(0, 3fr) 15.4%;
+}
+
+.project .sol-split-media {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.4rem 1.6rem 2rem;
+    border-left: var(--line);
+    background-color: #ffffff;
+}
+
+.project .sol-split-media figure {
+    margin: 0;
+}
+
+.project .sol-split-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.project .sol-caption {
+    margin-top: 0.5rem;
+    color: var(--muted);
+    font-size: 0.8rem;
+    line-height: 1.25;
+    letter-spacing: 0;
+}
+
+@media (max-width: 55rem) {
+    .project .sol-split {
+        grid-template-columns: 1fr;
+    }
+
+    .project .sol-split-media {
+        border-left: none;
+        border-top: var(--line);
+        padding: 1rem;
+    }
+}
+
+.project .sol-split-media.is-row {
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.project .sol-split-media.is-row figure {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+@media (max-width: 55rem) {
+    .project .sol-split-media.is-row {
+        flex-direction: column;
+    }
+}
+
+
+/* totem journey: each section is the image(s) first, then the writing underneath */
+.project .sol-split {
+    grid-template-columns: 15.4% minmax(0, 1fr) 15.4%;
+    grid-template-areas:
+        "left media right"
+        "left copy right";
+}
+
+.project .sol-split > .sol-gutter:first-child {
+    grid-area: left;
+}
+
+.project .sol-split > .sol-gutter:last-child {
+    grid-area: right;
+}
+
+.project .sol-split > .sol-split-media {
+    grid-area: media;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1.4rem 1.6rem;
+    border-left: none;
+}
+
+.project .sol-split > .sol-split-media figure {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.project .sol-split > .sol-copy {
+    grid-area: copy;
+}
+
+@media (max-width: 55rem) {
+    .project .sol-split {
+        grid-template-columns: 1fr;
+        grid-template-areas: "media" "copy";
+    }
+
+    .project .sol-split > .sol-split-media {
+        flex-direction: column;
+        padding: 1rem;
+    }
+}
+
+
+/* images stacked one under the other */
+.project .sol-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.project .sol-stack img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+
+/* slightly smaller full-width images on the totem page */
+.project .sol-flow.is-small {
+    padding: 1.6rem 20%;
+}
+
+.project .sol-flow.is-small img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+@media (max-width: 55rem) {
+    .project .sol-flow.is-small {
+        padding: 1rem;
+    }
+}
+
+/* more room above and below the writing boxes */
+.project .sol-copy {
+    padding-top: 3rem;
+    padding-bottom: 3.5rem;
+}
+
+@media (max-width: 55rem) {
+    .project .sol-copy {
+        padding-top: 2rem;
+        padding-bottom: 2.5rem;
+    }
+}
+
+
+/* overview and role side by side, no line between */
+.project .sol-split > .sol-duo {
+    grid-area: copy;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 3vw;
+    padding: 0 var(--case-pad);
+}
+
+.project .sol-duo .sol-copy {
+    width: auto;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media (max-width: 55rem) {
+    .project .sol-split > .sol-duo {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* full-width image bands that stay inside the side margins */
+.project .sol-imgband {
+    display: grid;
+    grid-template-columns: 15.4% minmax(0, 1fr) 15.4%;
+}
+
+.project .sol-imgband-media {
+    padding: 1.4rem 1.6rem;
+    background-color: #ffffff;
+}
+
+.project .sol-imgband-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+@media (max-width: 55rem) {
+    .project .sol-imgband {
+        grid-template-columns: 1fr;
+    }
+
+    .project .sol-imgband .sol-gutter {
+        display: none;
+    }
+
+    .project .sol-imgband-media {
+        padding: 1rem;
+    }
+}
+
+
+/* the four phones sit inside the side margins like the other bands */
+.project .sol-imgband .sol-screens {
+    padding: 0;
+    background-color: transparent;
 }
